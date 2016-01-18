@@ -1,9 +1,14 @@
 ## JPTransparentNavgationBar
 > 实现透明NavigationBar
+
 > 随意控制NavigationBar透明度及颜色，不涉及苹果私有API
+
 > 支持重置还原NavigationBar
 
+> 附带实现《知乎日报》首页的导航栏和TableView组头切换的效果
+
 **导入UINavigationBar+JPExtension.h即可随意设置NavgationBar的透明度以及背景颜色**
+
 ----
 ![image](https://github.com/XiFengLang/JPTransparentNavgationBar/raw/master/NavigationBarGif.gif)
 
