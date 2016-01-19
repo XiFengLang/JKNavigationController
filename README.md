@@ -7,11 +7,13 @@
 
 > 附带实现《知乎日报》首页的导航栏和TableView组头切换的效果
 
+> 新增平移+透明效果
+
 **导入UINavigationBar+JPExtension.h即可随意设置NavgationBar的透明度以及背景颜色**
 
 ----
 ![image](https://github.com/XiFengLang/JPTransparentNavgationBar/raw/master/NavigationBarGif.gif)
-
+![image](https://github.com/XiFengLang/JPTransparentNavgationBar/raw/master/NavigationBarGifTwo.gif)
 ---
 **usage**
 
