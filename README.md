@@ -12,8 +12,9 @@
 **导入UINavigationBar+JPExtension.h即可随意设置NavgationBar的透明度以及背景颜色**
 
 ----
-![image](https://github.com/XiFengLang/JPTransparentNavgationBar/raw/master/NavigationBarGif.gif)
-![image](https://github.com/XiFengLang/JPTransparentNavgationBar/raw/master/NavigationBarGifTwo.gif)
+
+![image](https://github.com/XiFengLang/JPTransparentNavgationBar/raw/master/NavigationBarGif.gif)![image](https://github.com/XiFengLang/JPTransparentNavgationBar/raw/master/NavigationBarGifTwo.gif)
+
 ---
 **usage**
 
