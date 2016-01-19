@@ -1,30 +1,27 @@
 //
-//  ViewController.m
+//  TranslationNavigationBarVC.m
 //  TransparentNavgationBar
 //
-//  Created by apple on 16/1/18.
+//  Created by apple on 16/1/19.
 //  Copyright © 2016年 XiFengLang. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "TranslationNavigationBarVC.h"
 #import "JPRefreshTitleView.h"
 #import "JPTableViewCell.h"
 #import "UINavigationBar+JPExtension.h"
 
 #define NAVGATIONBAR self.navigationController.navigationBar
-
-
-@interface ViewController ()
+@interface TranslationNavigationBarVC ()
 {
     CGRect HeaderFrame;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)JPRefreshTitleView * refrshView;
 @property (nonatomic, assign)CGFloat marginTop;
-
 @end
 
-@implementation ViewController
+@implementation TranslationNavigationBarVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,27 +44,24 @@
                                                                      font:[UIFont systemFontOfSize:17]
                                                                 textColor:[UIColor whiteColor]
                                                           refreshingBlock:^{
-                              StrongSelf;
-                              [self.tableView reloadData];
-                              NSLog(@"*****");
-                       }];
+                                                              StrongSelf;
+                                                              [self.tableView reloadData];
+                                                              NSLog(@"*****");
+                                                          }];
     
     [self.refrshView setActivityIndicatorColor:[UIColor whiteColor]];
     
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    // 方式1：插入1个高度为64的view充当背景View
-    [self.navigationController.navigationBar jp_setNavigationBarBackgroundColor:[[UIColor purpleColor] colorWithAlphaComponent:1]];
-}
-
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
+    // 方式1：插入1个高度为64的view充当背景View
+    [self.navigationController.navigationBar jp_setNavigationBarBackgroundColor:[[UIColor purpleColor] colorWithAlphaComponent:1]];
+    
     // 重置还原
-//    [self.navigationController.navigationBar jp_restoreNavigationBar];
-    HeaderFrame = [self.tableView rectForHeaderInSection:1];    //最好放在viewDidAppear:调用，不然可能有误差
+    // [self.navigationController.navigationBar jp_restoreNavigationBar];
+    HeaderFrame = [self.tableView rectForHeaderInSection:1];
 }
 
 
@@ -82,13 +76,20 @@
     CGFloat offsetY = scrollView.contentOffset.y;
     CGFloat newoffsetY = offsetY + self.marginTop;
     
-
-    if (newoffsetY >= 0 && newoffsetY <= 150) {
-        [self.navigationController.navigationBar jp_setNavigationBarBackgroundAlpha:1- newoffsetY/150];
-    }else if (newoffsetY > 150){
-        [self.navigationController.navigationBar jp_setNavigationBarBackgroundAlpha:0];
+    if (newoffsetY >= 0 && newoffsetY <= 100) {
+        [self.navigationController.navigationBar jp_translationNavigationBarVerticalWithOffsetY:- newoffsetY/100.0*44];
+        self.refrshView.alpha = 1-newoffsetY/100;
+        self.navigationController.navigationBar.tintColor = [[UIColor whiteColor]colorWithAlphaComponent:1-newoffsetY/100];
+        
+    }else if (newoffsetY < 0){
+        [self.navigationController.navigationBar jp_translationNavigationBarVerticalWithOffsetY:0];
+        self.refrshView.alpha = 1;
+        self.navigationController.navigationBar.tintColor = [[UIColor whiteColor]colorWithAlphaComponent:1];
+        
     }else{
-        [NAVGATIONBAR jp_setNavigationBarBackgroundAlpha:1];
+        [self.navigationController.navigationBar jp_translationNavigationBarVerticalWithOffsetY:-44];
+        self.refrshView.alpha = 0;
+        self.navigationController.navigationBar.tintColor = [[UIColor whiteColor]colorWithAlphaComponent:0];
     }
     
 }
@@ -143,9 +144,6 @@
 - (void)viewDidLayoutSubviews{
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
-
-
-
 
 
 @end

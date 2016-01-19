@@ -20,6 +20,7 @@
 		180EFD401C4CD70A0016F2B8 /* JPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EFD3F1C4CD70A0016F2B8 /* JPTableViewCell.m */; };
 		180EFD441C4CD7D10016F2B8 /* JPRefreshTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EFD431C4CD7D10016F2B8 /* JPRefreshTitleView.m */; };
 		180EFD481C4CD98A0016F2B8 /* UINavigationBar+JPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EFD471C4CD98A0016F2B8 /* UINavigationBar+JPExtension.m */; };
+		183A482C1C4DC7EE00B895C8 /* TranslationNavigationBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 183A482B1C4DC7EE00B895C8 /* TranslationNavigationBarVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		180EFD431C4CD7D10016F2B8 /* JPRefreshTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPRefreshTitleView.m; sourceTree = "<group>"; };
 		180EFD461C4CD98A0016F2B8 /* UINavigationBar+JPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+JPExtension.h"; sourceTree = "<group>"; };
 		180EFD471C4CD98A0016F2B8 /* UINavigationBar+JPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+JPExtension.m"; sourceTree = "<group>"; };
+		183A482A1C4DC7EE00B895C8 /* TranslationNavigationBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslationNavigationBarVC.h; sourceTree = "<group>"; };
+		183A482B1C4DC7EE00B895C8 /* TranslationNavigationBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslationNavigationBarVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				180EFD0C1C4CD4420016F2B8 /* ViewController.m */,
 				180EFD3B1C4CD6E30016F2B8 /* ZhiHuViewController.h */,
 				180EFD3C1C4CD6E30016F2B8 /* ZhiHuViewController.m */,
+				183A482A1C4DC7EE00B895C8 /* TranslationNavigationBarVC.h */,
+				183A482B1C4DC7EE00B895C8 /* TranslationNavigationBarVC.m */,
 				180EFD3E1C4CD70A0016F2B8 /* JPTableViewCell.h */,
 				180EFD3F1C4CD70A0016F2B8 /* JPTableViewCell.m */,
 				180EFD451C4CD9630016F2B8 /* JPNavgationBarExtension */,
@@ -314,6 +319,7 @@
 				180EFD0A1C4CD4420016F2B8 /* AppDelegate.m in Sources */,
 				180EFD131C4CD4420016F2B8 /* TransparentNavgationBar.xcdatamodeld in Sources */,
 				180EFD441C4CD7D10016F2B8 /* JPRefreshTitleView.m in Sources */,
+				183A482C1C4DC7EE00B895C8 /* TranslationNavigationBarVC.m in Sources */,
 				180EFD481C4CD98A0016F2B8 /* UINavigationBar+JPExtension.m in Sources */,
 				180EFD071C4CD4420016F2B8 /* main.m in Sources */,
 				180EFD3D1C4CD6E30016F2B8 /* ZhiHuViewController.m in Sources */,
@@ -540,6 +546,7 @@
 				180EFD341C4CD4420016F2B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		180EFD351C4CD4420016F2B8 /* Build configuration list for PBXNativeTarget "TransparentNavgationBarTests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +555,7 @@
 				180EFD371C4CD4420016F2B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		180EFD381C4CD4420016F2B8 /* Build configuration list for PBXNativeTarget "TransparentNavgationBarUITests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +564,7 @@
 				180EFD3A1C4CD4420016F2B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
