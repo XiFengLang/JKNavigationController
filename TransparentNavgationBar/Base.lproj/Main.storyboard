@@ -111,7 +111,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QHn-p9-mtf">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JPTableViewCell" rowHeight="50" id="m1H-9m-sdp" customClass="JPTableViewCell">
@@ -149,7 +149,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="x1P-mt-FaQ" firstAttribute="top" secondItem="QHn-p9-mtf" secondAttribute="bottom" id="84Y-fD-vx3"/>
-                            <constraint firstItem="QHn-p9-mtf" firstAttribute="top" secondItem="5Vp-F4-Ay8" secondAttribute="top" id="8oG-rj-F6U"/>
+                            <constraint firstItem="QHn-p9-mtf" firstAttribute="top" secondItem="5Vp-F4-Ay8" secondAttribute="top" constant="20" id="8oG-rj-F6U"/>
                             <constraint firstAttribute="trailing" secondItem="QHn-p9-mtf" secondAttribute="trailing" id="hJT-jK-bke"/>
                             <constraint firstItem="QHn-p9-mtf" firstAttribute="leading" secondItem="5Vp-F4-Ay8" secondAttribute="leading" id="mP5-Sc-QgV"/>
                         </constraints>
