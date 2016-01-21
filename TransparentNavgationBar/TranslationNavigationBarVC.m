@@ -12,7 +12,7 @@
 #import "UINavigationBar+JPExtension.h"
 
 #define NAVGATIONBAR self.navigationController.navigationBar
-@interface TranslationNavigationBarVC ()
+@interface TranslationNavigationBarVC ()<UIGestureRecognizerDelegate>
 {
     CGRect HeaderFrame;
 }
@@ -35,9 +35,12 @@
     self.tableView.tableFooterView = [UIView new];
     HeaderFrame = [self.tableView rectForHeaderInSection:1];
     
-    // 方式1：插入1个高度为64的view充当背景View
-    [self.navigationController.navigationBar jp_setNavigationBarBackgroundColor:[[UIColor purpleColor] colorWithAlphaComponent:1]];
+
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    // 测试leftBarButtonItem和侧滑返回手势冲突
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(back)];
     
     WeakSelf;
     self.refrshView = [JPRefreshTitleView showRefreshViewInViewController:self
@@ -53,6 +56,17 @@
     
     [self.refrshView setActivityIndicatorColor:[UIColor whiteColor]];
     
+}
+
+- (void)back{
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    // 方式1：插入1个高度为64的view充当背景View
+    [self.navigationController.navigationBar jp_setNavigationBarBackgroundColor:[[UIColor purpleColor] colorWithAlphaComponent:1]];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
