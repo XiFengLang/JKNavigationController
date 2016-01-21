@@ -35,17 +35,19 @@
     self.tableView.tableFooterView = [UIView new];
     HeaderFrame = [self.tableView rectForHeaderInSection:1];
     
+    // 方式1：插入1个高度为64的view充当背景View
+    [self.navigationController.navigationBar jp_setNavigationBarBackgroundColor:[[UIColor purpleColor] colorWithAlphaComponent:1]];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     WeakSelf;
     self.refrshView = [JPRefreshTitleView showRefreshViewInViewController:self
                                                      observableScrollView:self.tableView
-                                                                    title:@"首页"
+                                                                    title:@"上移渐变隐藏"
                                                                      font:[UIFont systemFontOfSize:17]
                                                                 textColor:[UIColor whiteColor]
                                                           refreshingBlock:^{
                                                               StrongSelf;
-                                                              [self.tableView reloadData];
+                                                              [self.tableView reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 5)] withRowAnimation:UITableViewRowAnimationBottom];
                                                               NSLog(@"*****");
                                                           }];
     
@@ -55,17 +57,14 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
-    // 方式1：插入1个高度为64的view充当背景View
-    [self.navigationController.navigationBar jp_setNavigationBarBackgroundColor:[[UIColor purpleColor] colorWithAlphaComponent:1]];
-    
-    // 重置还原
-    // [self.navigationController.navigationBar jp_restoreNavigationBar];
     HeaderFrame = [self.tableView rectForHeaderInSection:1];
 }
 
 
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:(BOOL)animated];
+    [self.navigationController.navigationBar jp_restoreNavigationBar];
+}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     

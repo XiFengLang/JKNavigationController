@@ -40,27 +40,31 @@
     self.tableView.sectionFooterHeight = 0;
     self.tableView.tableFooterView = [UIView new];
     
-    // 方式2：插入1个高度为20的view放在状态栏下面，同时设置navigationBar的背景颜色
     [self.navigationController.navigationBar jp_setStatusBarBackgroundViewColor:[[UIColor purpleColor] colorWithAlphaComponent:0]];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     WeakSelf;
     self.refrshView = [JPRefreshTitleView showRefreshViewInViewController:self
                                                      observableScrollView:self.tableView
-                                                                    title:@"首页"
+                                                                    title:@"仿知乎日报"
                                                                      font:[UIFont systemFontOfSize:17]
                                                                 textColor:[UIColor whiteColor]
                                                           refreshingBlock:^{
                                                               StrongSelf;
-                                                              [self.tableView reloadData];
+                                                              [self.tableView reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 5)] withRowAnimation:UITableViewRowAnimationBottom];
                                                               NSLog(@"*****");
                                                           }];
     [self.refrshView setActivityIndicatorColor:[UIColor whiteColor]];
 }
 
+
+
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     HeaderFrame = [self.tableView rectForHeaderInSection:1];
+    
+    // 方式2：插入1个高度为20的view放在状态栏下面，同时设置navigationBar的背景颜色
+    [self.navigationController.navigationBar jp_setStatusBarBackgroundViewColor:[[UIColor purpleColor] colorWithAlphaComponent:0]];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -87,7 +91,7 @@
         [self.navigationController.navigationBar setBackgroundColor:[[UIColor purpleColor] colorWithAlphaComponent:0]];
         
     }else if (newoffsetY < HeaderFrame.origin.y){
-        [self.refrshView resetNavigationItemTitle:@"首页"];
+        [self.refrshView resetNavigationItemTitle:@"仿知乎日报"];
         self.refrshView.hidden = NO;
     }
     

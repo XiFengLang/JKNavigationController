@@ -11,7 +11,6 @@
 #import "JPTableViewCell.h"
 #import "UINavigationBar+JPExtension.h"
 
-#define NAVGATIONBAR self.navigationController.navigationBar
 
 
 @interface ViewController ()
@@ -48,7 +47,7 @@
                                                                 textColor:[UIColor whiteColor]
                                                           refreshingBlock:^{
                               StrongSelf;
-                              [self.tableView reloadData];
+                              [self.tableView reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 5)] withRowAnimation:UITableViewRowAnimationBottom];
                               NSLog(@"*****");
                        }];
     
@@ -64,14 +63,17 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
-    // 重置还原
-//    [self.navigationController.navigationBar jp_restoreNavigationBar];
     HeaderFrame = [self.tableView rectForHeaderInSection:1];    //最好放在viewDidAppear:调用，不然可能有误差
 }
 
+- (void)viewDidDisappear:(BOOL)animated{
+    [self.tableView setContentOffset:CGPointZero animated:YES];
+}
 
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:(BOOL)animated];
+    [self.navigationController.navigationBar jp_restoreNavigationBar];
+}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
@@ -88,7 +90,7 @@
     }else if (newoffsetY > 150){
         [self.navigationController.navigationBar jp_setNavigationBarBackgroundAlpha:0];
     }else{
-        [NAVGATIONBAR jp_setNavigationBarBackgroundAlpha:1];
+        [NavigationBar jp_setNavigationBarBackgroundAlpha:1];
     }
     
 }

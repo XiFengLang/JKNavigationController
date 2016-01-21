@@ -91,7 +91,8 @@ static char * statusBarViewRuntimeKey;
 - (void)jp_restoreNavigationBar{
     [self setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [self setShadowImage:nil];
-    
+    self.transform = CGAffineTransformIdentity;
+    self.tintColor = [self.tintColor colorWithAlphaComponent:1];
     [self restoreBackgroundView];
     [self restoreStatusBarView];
 }

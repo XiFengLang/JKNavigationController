@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define NavigationBar self.navigationController.navigationBar
+
 @interface UINavigationBar (JPExtension)
 /**
  *  背景颜色(方式1，同一界面不能2种方式混用)
