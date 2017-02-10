@@ -2,9 +2,13 @@
 ## 2.0版：JKNavigationController ##
 
 
-1.0版本只是实现了`修改NavigationBar的(颜色)透明度`，在iOS10上有兼容性BUG，并且没有适配Push/Pop切换动画。
+**`UINavigationBar+JKTransparentize.m`中多处使用KVO调用私有API，未经上架测试，如果不需要渐变功能，可删除部分代码。**
 
-2.0版本兼容了`iOS8`、`iOS9`、`iOS10`，增加了`对Push和Pop动画的兼容`，并增加`全屏侧划返回`功能。在实现过程中参考了[Leo的LTNavigationBar](https://github.com/ltebean/LTNavigationBar)、[SunnyDog的FDFullscreenPopGesture](https://github.com/forkingdog/FDFullscreenPopGesture)和[JNTian的JTNavigationController](https://github.com/JNTian/JTNavigationController#jtnavigationcontroller)。2.0版本的`JKNavigationController`可以视为3个第三方库(组件)的组合库。
+
+
+* 1.0版本只是实现了`修改NavigationBar的(颜色)透明度`，在iOS10上有兼容性BUG，并且没有适配Push/Pop切换动画。
+
+* 2.0版本兼容了`iOS8`、`iOS9`、`iOS10`，增加了`对Push和Pop动画的兼容`，并增加`全屏侧划返回`功能。在实现过程中参考了[Leo的LTNavigationBar](https://github.com/ltebean/LTNavigationBar)、[SunnyDog的FDFullscreenPopGesture](https://github.com/forkingdog/FDFullscreenPopGesture)和[JNTian的JTNavigationController](https://github.com/JNTian/JTNavigationController#jtnavigationcontroller)。2.0版本的`JKNavigationController`可以视为3个第三方库(组件)的组合库。
 
 ---
 

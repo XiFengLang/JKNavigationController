@@ -8,6 +8,7 @@
 
 #import "JKViewController.h"
 #import "JKNavigationController.h"
+#import "TestViewController.h"
 
 @interface JKViewController ()
 
@@ -21,10 +22,24 @@
     self.view.backgroundColor = [UIColor redColor];
     
     /// 关闭全屏侧滑返回手势效果，会使用原生的侧滑效果
+    
     self.jk_fullScreenPopGestrueEnabled = NO;
     
     
     self.navigationItem.title = @"测试";
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushAction)];
+}
+
+- (void)pushAction {
+    [self.navigationController pushViewController:[TestViewController
+                                                   new] animated:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 

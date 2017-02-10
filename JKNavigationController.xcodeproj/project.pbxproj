@@ -23,6 +23,7 @@
 		9F4929101E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F49290A1E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.m */; };
 		9F4929111E4D60AD0077B9E4 /* UIViewController+JKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F49290C1E4D60AD0077B9E4 /* UIViewController+JKNavigationController.m */; };
 		9F4929141E4D60CB0077B9E4 /* JKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4929131E4D60CB0077B9E4 /* JKViewController.m */; };
+		9F49291A1E4D98F80077B9E4 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4929191E4D98F80077B9E4 /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		9F49290C1E4D60AD0077B9E4 /* UIViewController+JKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JKNavigationController.m"; sourceTree = "<group>"; };
 		9F4929121E4D60CB0077B9E4 /* JKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKViewController.h; sourceTree = "<group>"; };
 		9F4929131E4D60CB0077B9E4 /* JKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKViewController.m; sourceTree = "<group>"; };
+		9F4929181E4D98F80077B9E4 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		9F4929191E4D98F80077B9E4 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 				9F4928FC1E4D60A10077B9E4 /* ZhiHuViewController.m */,
 				9F4929121E4D60CB0077B9E4 /* JKViewController.h */,
 				9F4929131E4D60CB0077B9E4 /* JKViewController.m */,
+				9F4929181E4D98F80077B9E4 /* TestViewController.h */,
+				9F4929191E4D98F80077B9E4 /* TestViewController.m */,
 				9F4928F21E4D60780077B9E4 /* Others */,
 				9F4928DB1E4D5FFB0077B9E4 /* Supporting Files */,
 			);
@@ -219,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F49290F1E4D60AD0077B9E4 /* JKRootNavigationController.m in Sources */,
+				9F49291A1E4D98F80077B9E4 /* TestViewController.m in Sources */,
 				9F4929141E4D60CB0077B9E4 /* JKViewController.m in Sources */,
 				9F4928E01E4D5FFB0077B9E4 /* AppDelegate.m in Sources */,
 				9F4929111E4D60AD0077B9E4 /* UIViewController+JKNavigationController.m in Sources */,
@@ -351,6 +357,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5C5VZ6884A;
 				INFOPLIST_FILE = JKNavigationController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.fitcome.JKNavigationController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -363,6 +370,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5C5VZ6884A;
 				INFOPLIST_FILE = JKNavigationController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.fitcome.JKNavigationController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
