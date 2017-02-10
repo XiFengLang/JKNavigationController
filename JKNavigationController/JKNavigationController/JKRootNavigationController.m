@@ -1,12 +1,12 @@
 //
-//  JKPackageNavigationController.m
-//  TransparentNavgationBar
+//  JKRootNavigationController.m
+//  JKNavigationController
 //
 //  Created by 蒋鹏 on 17/2/5.
 //  Copyright © 2017年 XiFengLang. All rights reserved.
 //
 
-#import "JKPackageNavigationController.h"
+#import "JKRootNavigationController.h"
 #import "JKBackIndicatorButton.h"
 #import "UINavigationBar+JKTransparentize.m"
 #import "UIViewController+JKNavigationController.h"
@@ -26,18 +26,18 @@
 
 @interface JKInterLayerNavigationController : UINavigationController
 
-@property (nonatomic, weak, readonly) JKPackageNavigationController * jk_coverNavigationController;
+@property (nonatomic, weak, readonly) JKRootNavigationController * jk_coverNavigationController;
 
 @end
 
 @implementation JKInterLayerNavigationController
 
-- (JKPackageNavigationController *)jk_coverNavigationController {
-    return (JKPackageNavigationController *)self.parentViewController.navigationController;
+- (JKRootNavigationController *)jk_coverNavigationController {
+    return (JKRootNavigationController *)self.parentViewController.navigationController;
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    viewController.jk_packNavigationController = self.jk_coverNavigationController;
+    viewController.jk_rootNavigationController = self.jk_coverNavigationController;
     UIViewController * fromViewController = self.jk_coverNavigationController.jk_viewControllers.lastObject;
 
     /// 取Title
@@ -74,7 +74,7 @@
 }
 
 
-#pragma mark - Push/Pop全都由JKPackageNavigationController管理
+#pragma mark - Push/Pop全都由JKRootNavigationController管理
 
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated {
@@ -159,17 +159,17 @@
 @end
 
 
-#pragma mark - JKPackageNavigationController最底层的总导航控制器
+#pragma mark - JKRootNavigationController最底层的总导航控制器
 
 
-@interface JKPackageNavigationController () <UINavigationControllerDelegate, UIGestureRecognizerDelegate>
+@interface JKRootNavigationController () <UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIPanGestureRecognizer * jk_popGestuer;
 @property (nonatomic, weak) id jk_popGestureDelegate;
 
 @end
 
-@implementation JKPackageNavigationController
+@implementation JKRootNavigationController
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
@@ -195,7 +195,7 @@
         if ([obj isKindOfClass:[JKInterLayerViewController class]]) {
             [tempViewControllers addObject:obj];
         } else {
-            obj.jk_packNavigationController = self;
+            obj.jk_rootNavigationController = self;
             JKInterLayerViewController * interlayerViewController = [JKInterLayerViewController jk_interlayerViewControllerWithRootViewController:obj];
             [tempViewControllers addObject:interlayerViewController];
         }

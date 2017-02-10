@@ -19,7 +19,7 @@
 		9F4929011E4D60A60077B9E4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4929001E4D60A60077B9E4 /* BaseViewController.m */; };
 		9F49290D1E4D60AD0077B9E4 /* jk_icon_system_backIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F4929031E4D60AD0077B9E4 /* jk_icon_system_backIndicator.png */; };
 		9F49290E1E4D60AD0077B9E4 /* JKBackIndicatorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4929051E4D60AD0077B9E4 /* JKBackIndicatorButton.m */; };
-		9F49290F1E4D60AD0077B9E4 /* JKPackageNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4929081E4D60AD0077B9E4 /* JKPackageNavigationController.m */; };
+		9F49290F1E4D60AD0077B9E4 /* JKRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4929081E4D60AD0077B9E4 /* JKRootNavigationController.m */; };
 		9F4929101E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F49290A1E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.m */; };
 		9F4929111E4D60AD0077B9E4 /* UIViewController+JKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F49290C1E4D60AD0077B9E4 /* UIViewController+JKNavigationController.m */; };
 		9F4929141E4D60CB0077B9E4 /* JKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4929131E4D60CB0077B9E4 /* JKViewController.m */; };
@@ -48,8 +48,8 @@
 		9F4929041E4D60AD0077B9E4 /* JKBackIndicatorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKBackIndicatorButton.h; sourceTree = "<group>"; };
 		9F4929051E4D60AD0077B9E4 /* JKBackIndicatorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKBackIndicatorButton.m; sourceTree = "<group>"; };
 		9F4929061E4D60AD0077B9E4 /* JKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKNavigationController.h; sourceTree = "<group>"; };
-		9F4929071E4D60AD0077B9E4 /* JKPackageNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPackageNavigationController.h; sourceTree = "<group>"; };
-		9F4929081E4D60AD0077B9E4 /* JKPackageNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPackageNavigationController.m; sourceTree = "<group>"; };
+		9F4929071E4D60AD0077B9E4 /* JKRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKRootNavigationController.h; sourceTree = "<group>"; };
+		9F4929081E4D60AD0077B9E4 /* JKRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKRootNavigationController.m; sourceTree = "<group>"; };
 		9F4929091E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+JKTransparentize.h"; sourceTree = "<group>"; };
 		9F49290A1E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+JKTransparentize.m"; sourceTree = "<group>"; };
 		9F49290B1E4D60AD0077B9E4 /* UIViewController+JKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JKNavigationController.h"; sourceTree = "<group>"; };
@@ -135,8 +135,8 @@
 				9F4929041E4D60AD0077B9E4 /* JKBackIndicatorButton.h */,
 				9F4929051E4D60AD0077B9E4 /* JKBackIndicatorButton.m */,
 				9F4929061E4D60AD0077B9E4 /* JKNavigationController.h */,
-				9F4929071E4D60AD0077B9E4 /* JKPackageNavigationController.h */,
-				9F4929081E4D60AD0077B9E4 /* JKPackageNavigationController.m */,
+				9F4929071E4D60AD0077B9E4 /* JKRootNavigationController.h */,
+				9F4929081E4D60AD0077B9E4 /* JKRootNavigationController.m */,
 				9F4929091E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.h */,
 				9F49290A1E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.m */,
 				9F49290B1E4D60AD0077B9E4 /* UIViewController+JKNavigationController.h */,
@@ -218,7 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F49290F1E4D60AD0077B9E4 /* JKPackageNavigationController.m in Sources */,
+				9F49290F1E4D60AD0077B9E4 /* JKRootNavigationController.m in Sources */,
 				9F4929141E4D60CB0077B9E4 /* JKViewController.m in Sources */,
 				9F4928E01E4D5FFB0077B9E4 /* AppDelegate.m in Sources */,
 				9F4929111E4D60AD0077B9E4 /* UIViewController+JKNavigationController.m in Sources */,

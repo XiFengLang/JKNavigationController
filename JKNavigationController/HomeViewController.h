@@ -1,6 +1,6 @@
 //
 //  ViewController.h
-//  TransparentNavgationBar
+//  JKNavigationController
 //
 //  Created by apple on 16/1/18.
 //  Copyright © 2016年 XiFengLang. All rights reserved.

@@ -1,13 +1,13 @@
 //
 //  UIViewController+JKNavigationController.h
-//  TransparentNavgationBar
+//  JKNavigationController
 //
 //  Created by 蒋鹏 on 17/2/5.
 //  Copyright © 2017年 XiFengLang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "JKPackageNavigationController.h"
+#import "JKRootNavigationController.h"
 
 @interface UIViewController (JKNavigationController)
 
@@ -22,6 +22,6 @@
 /**
  最底层的总导航控制器
  */
-@property (nonatomic, weak) JKPackageNavigationController * jk_packNavigationController;
+@property (nonatomic, weak) JKRootNavigationController * jk_rootNavigationController;
 
 @end

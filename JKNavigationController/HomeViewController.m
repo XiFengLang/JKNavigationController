@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  TransparentNavgationBar
+//  JKNavigationController
 //
 //  Created by apple on 16/1/18.
 //  Copyright © 2016年 XiFengLang. All rights reserved.
@@ -44,7 +44,7 @@
     
     
     ///  会设置所有子控制器的全屏手势使能状态，全局效果
-    self.jk_packNavigationController.jk_fullScreenPopGestrueEnabled = YES;
+    self.jk_rootNavigationController.jk_fullScreenPopGestrueEnabled = YES;
     
     
     /// 影响当前控制器的侧滑返回，jk_fullScreenPopGestrueEnabled = NO时会使用系统原生的侧滑效果。

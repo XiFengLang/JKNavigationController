@@ -1,6 +1,6 @@
 //
 //  UIViewController+JKNavigationController.m
-//  TransparentNavgationBar
+//  JKNavigationController
 //
 //  Created by 蒋鹏 on 17/2/5.
 //  Copyright © 2017年 XiFengLang. All rights reserved.
@@ -12,14 +12,14 @@
 @implementation UIViewController (JKNavigationController)
 
 static char * kFullScreenPopGestrueEnabledKey = "JKFullScreenPopGestrueEnabled";
-static char * kPackageNavigationController = "JKPackageNavigationController";
+static char * kRootNavigationController = "JKRootNavigationController";
 
-- (void)setJk_packNavigationController:(JKPackageNavigationController *)jk_packNavigationController {
-    objc_setAssociatedObject(self, kPackageNavigationController, jk_packNavigationController, OBJC_ASSOCIATION_ASSIGN);
+- (void)setJk_rootNavigationController:(JKRootNavigationController *)jk_rootNavigationController {
+    objc_setAssociatedObject(self, kRootNavigationController, jk_rootNavigationController, OBJC_ASSOCIATION_ASSIGN);
 }
 
-- (JKPackageNavigationController *)jk_packNavigationController {
-    return objc_getAssociatedObject(self, kPackageNavigationController);
+- (JKRootNavigationController *)jk_rootNavigationController {
+    return objc_getAssociatedObject(self, kRootNavigationController);
 }
 
 - (void)setJk_fullScreenPopGestrueEnabled:(BOOL)jk_fullScreenPopGestrueEnabled {

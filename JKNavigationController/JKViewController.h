@@ -1,6 +1,6 @@
 //
 //  JKViewController.h
-//  TransparentNavgationBar
+//  JKNavigationController
 //
 //  Created by 蒋鹏 on 17/2/9.
 //  Copyright © 2017年 XiFengLang. All rights reserved.
