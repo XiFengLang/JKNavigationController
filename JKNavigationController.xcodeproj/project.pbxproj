@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F4928DD1E4D5FFB0077B9E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4928DC1E4D5FFB0077B9E4 /* main.m */; };
+		9F4928E01E4D5FFB0077B9E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4928DF1E4D5FFB0077B9E4 /* AppDelegate.m */; };
+		9F4928E61E4D5FFB0077B9E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4928E41E4D5FFB0077B9E4 /* Main.storyboard */; };
+		9F4928E81E4D5FFB0077B9E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F4928E71E4D5FFB0077B9E4 /* Assets.xcassets */; };
+		9F4928EB1E4D5FFB0077B9E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4928E91E4D5FFB0077B9E4 /* LaunchScreen.storyboard */; };
+		9F4928F51E4D608B0077B9E4 /* JPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4928F41E4D608B0077B9E4 /* JPTableViewCell.m */; };
+		9F4928F81E4D60970077B9E4 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4928F71E4D60970077B9E4 /* TabBarController.m */; };
+		9F4928FD1E4D60A10077B9E4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4928FA1E4D60A10077B9E4 /* HomeViewController.m */; };
+		9F4928FE1E4D60A10077B9E4 /* ZhiHuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4928FC1E4D60A10077B9E4 /* ZhiHuViewController.m */; };
+		9F4929011E4D60A60077B9E4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4929001E4D60A60077B9E4 /* BaseViewController.m */; };
+		9F49290D1E4D60AD0077B9E4 /* jk_icon_system_backIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F4929031E4D60AD0077B9E4 /* jk_icon_system_backIndicator.png */; };
+		9F49290E1E4D60AD0077B9E4 /* JKBackIndicatorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4929051E4D60AD0077B9E4 /* JKBackIndicatorButton.m */; };
+		9F49290F1E4D60AD0077B9E4 /* JKPackageNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4929081E4D60AD0077B9E4 /* JKPackageNavigationController.m */; };
+		9F4929101E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F49290A1E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.m */; };
+		9F4929111E4D60AD0077B9E4 /* UIViewController+JKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F49290C1E4D60AD0077B9E4 /* UIViewController+JKNavigationController.m */; };
+		9F4929141E4D60CB0077B9E4 /* JKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4929131E4D60CB0077B9E4 /* JKViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9F4928D81E4D5FFB0077B9E4 /* JKNavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKNavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F4928DC1E4D5FFB0077B9E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9F4928DE1E4D5FFB0077B9E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9F4928DF1E4D5FFB0077B9E4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9F4928E51E4D5FFB0077B9E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9F4928E71E4D5FFB0077B9E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F4928EA1E4D5FFB0077B9E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9F4928EC1E4D5FFB0077B9E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F4928F31E4D608B0077B9E4 /* JPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTableViewCell.h; sourceTree = "<group>"; };
+		9F4928F41E4D608B0077B9E4 /* JPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTableViewCell.m; sourceTree = "<group>"; };
+		9F4928F61E4D60970077B9E4 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		9F4928F71E4D60970077B9E4 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		9F4928F91E4D60A10077B9E4 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		9F4928FA1E4D60A10077B9E4 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		9F4928FB1E4D60A10077B9E4 /* ZhiHuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhiHuViewController.h; sourceTree = "<group>"; };
+		9F4928FC1E4D60A10077B9E4 /* ZhiHuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZhiHuViewController.m; sourceTree = "<group>"; };
+		9F4928FF1E4D60A60077B9E4 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		9F4929001E4D60A60077B9E4 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		9F4929031E4D60AD0077B9E4 /* jk_icon_system_backIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jk_icon_system_backIndicator.png; sourceTree = "<group>"; };
+		9F4929041E4D60AD0077B9E4 /* JKBackIndicatorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKBackIndicatorButton.h; sourceTree = "<group>"; };
+		9F4929051E4D60AD0077B9E4 /* JKBackIndicatorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKBackIndicatorButton.m; sourceTree = "<group>"; };
+		9F4929061E4D60AD0077B9E4 /* JKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKNavigationController.h; sourceTree = "<group>"; };
+		9F4929071E4D60AD0077B9E4 /* JKPackageNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPackageNavigationController.h; sourceTree = "<group>"; };
+		9F4929081E4D60AD0077B9E4 /* JKPackageNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPackageNavigationController.m; sourceTree = "<group>"; };
+		9F4929091E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+JKTransparentize.h"; sourceTree = "<group>"; };
+		9F49290A1E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+JKTransparentize.m"; sourceTree = "<group>"; };
+		9F49290B1E4D60AD0077B9E4 /* UIViewController+JKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JKNavigationController.h"; sourceTree = "<group>"; };
+		9F49290C1E4D60AD0077B9E4 /* UIViewController+JKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JKNavigationController.m"; sourceTree = "<group>"; };
+		9F4929121E4D60CB0077B9E4 /* JKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKViewController.h; sourceTree = "<group>"; };
+		9F4929131E4D60CB0077B9E4 /* JKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F4928D51E4D5FFB0077B9E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F4928CF1E4D5FFB0077B9E4 = {
+			isa = PBXGroup;
+			children = (
+				9F4928DA1E4D5FFB0077B9E4 /* JKNavigationController */,
+				9F4928D91E4D5FFB0077B9E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F4928D91E4D5FFB0077B9E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F4928D81E4D5FFB0077B9E4 /* JKNavigationController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F4928DA1E4D5FFB0077B9E4 /* JKNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				9F4929021E4D60AD0077B9E4 /* JKNavigationController */,
+				9F4928E41E4D5FFB0077B9E4 /* Main.storyboard */,
+				9F4928F91E4D60A10077B9E4 /* HomeViewController.h */,
+				9F4928FA1E4D60A10077B9E4 /* HomeViewController.m */,
+				9F4928FB1E4D60A10077B9E4 /* ZhiHuViewController.h */,
+				9F4928FC1E4D60A10077B9E4 /* ZhiHuViewController.m */,
+				9F4929121E4D60CB0077B9E4 /* JKViewController.h */,
+				9F4929131E4D60CB0077B9E4 /* JKViewController.m */,
+				9F4928F21E4D60780077B9E4 /* Others */,
+				9F4928DB1E4D5FFB0077B9E4 /* Supporting Files */,
+			);
+			path = JKNavigationController;
+			sourceTree = "<group>";
+		};
+		9F4928DB1E4D5FFB0077B9E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9F4928DC1E4D5FFB0077B9E4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F4928F21E4D60780077B9E4 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				9F4928FF1E4D60A60077B9E4 /* BaseViewController.h */,
+				9F4929001E4D60A60077B9E4 /* BaseViewController.m */,
+				9F4928DE1E4D5FFB0077B9E4 /* AppDelegate.h */,
+				9F4928DF1E4D5FFB0077B9E4 /* AppDelegate.m */,
+				9F4928E71E4D5FFB0077B9E4 /* Assets.xcassets */,
+				9F4928F31E4D608B0077B9E4 /* JPTableViewCell.h */,
+				9F4928F61E4D60970077B9E4 /* TabBarController.h */,
+				9F4928F71E4D60970077B9E4 /* TabBarController.m */,
+				9F4928F41E4D608B0077B9E4 /* JPTableViewCell.m */,
+				9F4928E91E4D5FFB0077B9E4 /* LaunchScreen.storyboard */,
+				9F4928EC1E4D5FFB0077B9E4 /* Info.plist */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+		9F4929021E4D60AD0077B9E4 /* JKNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				9F4929031E4D60AD0077B9E4 /* jk_icon_system_backIndicator.png */,
+				9F4929041E4D60AD0077B9E4 /* JKBackIndicatorButton.h */,
+				9F4929051E4D60AD0077B9E4 /* JKBackIndicatorButton.m */,
+				9F4929061E4D60AD0077B9E4 /* JKNavigationController.h */,
+				9F4929071E4D60AD0077B9E4 /* JKPackageNavigationController.h */,
+				9F4929081E4D60AD0077B9E4 /* JKPackageNavigationController.m */,
+				9F4929091E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.h */,
+				9F49290A1E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.m */,
+				9F49290B1E4D60AD0077B9E4 /* UIViewController+JKNavigationController.h */,
+				9F49290C1E4D60AD0077B9E4 /* UIViewController+JKNavigationController.m */,
+			);
+			path = JKNavigationController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F4928D71E4D5FFB0077B9E4 /* JKNavigationController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F4928EF1E4D5FFB0077B9E4 /* Build configuration list for PBXNativeTarget "JKNavigationController" */;
+			buildPhases = (
+				9F4928D41E4D5FFB0077B9E4 /* Sources */,
+				9F4928D51E4D5FFB0077B9E4 /* Frameworks */,
+				9F4928D61E4D5FFB0077B9E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JKNavigationController;
+			productName = JKNavigationController;
+			productReference = 9F4928D81E4D5FFB0077B9E4 /* JKNavigationController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F4928D01E4D5FFB0077B9E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "溪枫狼";
+				TargetAttributes = {
+					9F4928D71E4D5FFB0077B9E4 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 5C5VZ6884A;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9F4928D31E4D5FFB0077B9E4 /* Build configuration list for PBXProject "JKNavigationController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F4928CF1E4D5FFB0077B9E4;
+			productRefGroup = 9F4928D91E4D5FFB0077B9E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F4928D71E4D5FFB0077B9E4 /* JKNavigationController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F4928D61E4D5FFB0077B9E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F4928EB1E4D5FFB0077B9E4 /* LaunchScreen.storyboard in Resources */,
+				9F4928E81E4D5FFB0077B9E4 /* Assets.xcassets in Resources */,
+				9F49290D1E4D60AD0077B9E4 /* jk_icon_system_backIndicator.png in Resources */,
+				9F4928E61E4D5FFB0077B9E4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F4928D41E4D5FFB0077B9E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F49290F1E4D60AD0077B9E4 /* JKPackageNavigationController.m in Sources */,
+				9F4929141E4D60CB0077B9E4 /* JKViewController.m in Sources */,
+				9F4928E01E4D5FFB0077B9E4 /* AppDelegate.m in Sources */,
+				9F4929111E4D60AD0077B9E4 /* UIViewController+JKNavigationController.m in Sources */,
+				9F49290E1E4D60AD0077B9E4 /* JKBackIndicatorButton.m in Sources */,
+				9F4928F81E4D60970077B9E4 /* TabBarController.m in Sources */,
+				9F4928F51E4D608B0077B9E4 /* JPTableViewCell.m in Sources */,
+				9F4928FE1E4D60A10077B9E4 /* ZhiHuViewController.m in Sources */,
+				9F4928FD1E4D60A10077B9E4 /* HomeViewController.m in Sources */,
+				9F4929011E4D60A60077B9E4 /* BaseViewController.m in Sources */,
+				9F4929101E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.m in Sources */,
+				9F4928DD1E4D5FFB0077B9E4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9F4928E41E4D5FFB0077B9E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F4928E51E4D5FFB0077B9E4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9F4928E91E4D5FFB0077B9E4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F4928EA1E4D5FFB0077B9E4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9F4928ED1E4D5FFB0077B9E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9F4928EE1E4D5FFB0077B9E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F4928F01E4D5FFB0077B9E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5C5VZ6884A;
+				INFOPLIST_FILE = JKNavigationController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.fitcome.JKNavigationController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9F4928F11E4D5FFB0077B9E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5C5VZ6884A;
+				INFOPLIST_FILE = JKNavigationController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.fitcome.JKNavigationController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F4928D31E4D5FFB0077B9E4 /* Build configuration list for PBXProject "JKNavigationController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F4928ED1E4D5FFB0077B9E4 /* Debug */,
+				9F4928EE1E4D5FFB0077B9E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F4928EF1E4D5FFB0077B9E4 /* Build configuration list for PBXNativeTarget "JKNavigationController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F4928F01E4D5FFB0077B9E4 /* Debug */,
+				9F4928F11E4D5FFB0077B9E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9F4928D01E4D5FFB0077B9E4 /* Project object */;
+}
