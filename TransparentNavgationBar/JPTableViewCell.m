@@ -11,7 +11,7 @@
 @implementation JPTableViewCell
 
 - (void)awakeFromNib {
-    
+    [super awakeFromNib];
     self.contentView.backgroundColor = [UIColor lightGrayColor];
     
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;

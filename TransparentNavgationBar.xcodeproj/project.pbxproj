@@ -9,18 +9,23 @@
 /* Begin PBXBuildFile section */
 		180EFD071C4CD4420016F2B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EFD061C4CD4420016F2B8 /* main.m */; };
 		180EFD0A1C4CD4420016F2B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EFD091C4CD4420016F2B8 /* AppDelegate.m */; };
-		180EFD0D1C4CD4420016F2B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EFD0C1C4CD4420016F2B8 /* ViewController.m */; };
+		180EFD0D1C4CD4420016F2B8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EFD0C1C4CD4420016F2B8 /* HomeViewController.m */; };
 		180EFD101C4CD4420016F2B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180EFD0E1C4CD4420016F2B8 /* Main.storyboard */; };
 		180EFD131C4CD4420016F2B8 /* TransparentNavgationBar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 180EFD111C4CD4420016F2B8 /* TransparentNavgationBar.xcdatamodeld */; };
 		180EFD151C4CD4420016F2B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180EFD141C4CD4420016F2B8 /* Assets.xcassets */; };
 		180EFD181C4CD4420016F2B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180EFD161C4CD4420016F2B8 /* LaunchScreen.storyboard */; };
 		180EFD231C4CD4420016F2B8 /* TransparentNavgationBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EFD221C4CD4420016F2B8 /* TransparentNavgationBarTests.m */; };
 		180EFD2E1C4CD4420016F2B8 /* TransparentNavgationBarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EFD2D1C4CD4420016F2B8 /* TransparentNavgationBarUITests.m */; };
-		180EFD3D1C4CD6E30016F2B8 /* ZhiHuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EFD3C1C4CD6E30016F2B8 /* ZhiHuViewController.m */; };
 		180EFD401C4CD70A0016F2B8 /* JPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EFD3F1C4CD70A0016F2B8 /* JPTableViewCell.m */; };
-		180EFD441C4CD7D10016F2B8 /* JPRefreshTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EFD431C4CD7D10016F2B8 /* JPRefreshTitleView.m */; };
-		180EFD481C4CD98A0016F2B8 /* UINavigationBar+JPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EFD471C4CD98A0016F2B8 /* UINavigationBar+JPExtension.m */; };
-		183A482C1C4DC7EE00B895C8 /* TranslationNavigationBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 183A482B1C4DC7EE00B895C8 /* TranslationNavigationBarVC.m */; };
+		9F8BE1AB1E4C7032008D66AC /* JKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BE1AA1E4C7032008D66AC /* JKViewController.m */; };
+		9FBACBCD1E47116600539F52 /* JKPackageNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBACBCC1E47116600539F52 /* JKPackageNavigationController.m */; };
+		9FBACBD01E47118000539F52 /* UINavigationBar+JKTransparentize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBACBCF1E47118000539F52 /* UINavigationBar+JKTransparentize.m */; };
+		9FBACBD31E4711D300539F52 /* JKBackIndicatorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBACBD21E4711D300539F52 /* JKBackIndicatorButton.m */; };
+		9FBACBD61E47124400539F52 /* UIViewController+JKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBACBD51E47124400539F52 /* UIViewController+JKNavigationController.m */; };
+		9FBACBD81E47124A00539F52 /* jk_icon_system_backIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBACBD71E47124A00539F52 /* jk_icon_system_backIndicator.png */; };
+		9FCD5EAA1E4734340016FDD5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD5EA91E4734340016FDD5 /* BaseViewController.m */; };
+		9FCD5EAD1E4734C20016FDD5 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD5EAC1E4734C20016FDD5 /* TabBarController.m */; };
+		9FE1A38A1E4C1376008A6DA5 /* ZhiHuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1A3891E4C1376008A6DA5 /* ZhiHuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +50,8 @@
 		180EFD061C4CD4420016F2B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		180EFD081C4CD4420016F2B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		180EFD091C4CD4420016F2B8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		180EFD0B1C4CD4420016F2B8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		180EFD0C1C4CD4420016F2B8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		180EFD0B1C4CD4420016F2B8 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		180EFD0C1C4CD4420016F2B8 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		180EFD0F1C4CD4420016F2B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		180EFD121C4CD4420016F2B8 /* TransparentNavgationBar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TransparentNavgationBar.xcdatamodel; sourceTree = "<group>"; };
 		180EFD141C4CD4420016F2B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,16 +63,26 @@
 		180EFD291C4CD4420016F2B8 /* TransparentNavgationBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransparentNavgationBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		180EFD2D1C4CD4420016F2B8 /* TransparentNavgationBarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransparentNavgationBarUITests.m; sourceTree = "<group>"; };
 		180EFD2F1C4CD4420016F2B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		180EFD3B1C4CD6E30016F2B8 /* ZhiHuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhiHuViewController.h; sourceTree = "<group>"; };
-		180EFD3C1C4CD6E30016F2B8 /* ZhiHuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZhiHuViewController.m; sourceTree = "<group>"; };
 		180EFD3E1C4CD70A0016F2B8 /* JPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTableViewCell.h; sourceTree = "<group>"; };
 		180EFD3F1C4CD70A0016F2B8 /* JPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTableViewCell.m; sourceTree = "<group>"; };
-		180EFD421C4CD7D10016F2B8 /* JPRefreshTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPRefreshTitleView.h; sourceTree = "<group>"; };
-		180EFD431C4CD7D10016F2B8 /* JPRefreshTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPRefreshTitleView.m; sourceTree = "<group>"; };
-		180EFD461C4CD98A0016F2B8 /* UINavigationBar+JPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+JPExtension.h"; sourceTree = "<group>"; };
-		180EFD471C4CD98A0016F2B8 /* UINavigationBar+JPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+JPExtension.m"; sourceTree = "<group>"; };
-		183A482A1C4DC7EE00B895C8 /* TranslationNavigationBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslationNavigationBarVC.h; sourceTree = "<group>"; };
-		183A482B1C4DC7EE00B895C8 /* TranslationNavigationBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslationNavigationBarVC.m; sourceTree = "<group>"; };
+		9F6EFD111E47173F00FFEA03 /* JKNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKNavigationController.h; sourceTree = "<group>"; };
+		9F8BE1A91E4C7032008D66AC /* JKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKViewController.h; sourceTree = "<group>"; };
+		9F8BE1AA1E4C7032008D66AC /* JKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKViewController.m; sourceTree = "<group>"; };
+		9FBACBCB1E47116600539F52 /* JKPackageNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPackageNavigationController.h; sourceTree = "<group>"; };
+		9FBACBCC1E47116600539F52 /* JKPackageNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPackageNavigationController.m; sourceTree = "<group>"; };
+		9FBACBCE1E47118000539F52 /* UINavigationBar+JKTransparentize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+JKTransparentize.h"; sourceTree = "<group>"; };
+		9FBACBCF1E47118000539F52 /* UINavigationBar+JKTransparentize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+JKTransparentize.m"; sourceTree = "<group>"; };
+		9FBACBD11E4711D300539F52 /* JKBackIndicatorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKBackIndicatorButton.h; sourceTree = "<group>"; };
+		9FBACBD21E4711D300539F52 /* JKBackIndicatorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKBackIndicatorButton.m; sourceTree = "<group>"; };
+		9FBACBD41E47124400539F52 /* UIViewController+JKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JKNavigationController.h"; sourceTree = "<group>"; };
+		9FBACBD51E47124400539F52 /* UIViewController+JKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JKNavigationController.m"; sourceTree = "<group>"; };
+		9FBACBD71E47124A00539F52 /* jk_icon_system_backIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jk_icon_system_backIndicator.png; sourceTree = "<group>"; };
+		9FCD5EA81E4734340016FDD5 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		9FCD5EA91E4734340016FDD5 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		9FCD5EAB1E4734C20016FDD5 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		9FCD5EAC1E4734C20016FDD5 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		9FE1A3881E4C1376008A6DA5 /* ZhiHuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhiHuViewController.h; sourceTree = "<group>"; };
+		9FE1A3891E4C1376008A6DA5 /* ZhiHuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZhiHuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,23 +133,17 @@
 		180EFD041C4CD4420016F2B8 /* TransparentNavgationBar */ = {
 			isa = PBXGroup;
 			children = (
-				180EFD081C4CD4420016F2B8 /* AppDelegate.h */,
-				180EFD091C4CD4420016F2B8 /* AppDelegate.m */,
-				180EFD0B1C4CD4420016F2B8 /* ViewController.h */,
-				180EFD0C1C4CD4420016F2B8 /* ViewController.m */,
-				180EFD3B1C4CD6E30016F2B8 /* ZhiHuViewController.h */,
-				180EFD3C1C4CD6E30016F2B8 /* ZhiHuViewController.m */,
-				183A482A1C4DC7EE00B895C8 /* TranslationNavigationBarVC.h */,
-				183A482B1C4DC7EE00B895C8 /* TranslationNavigationBarVC.m */,
-				180EFD3E1C4CD70A0016F2B8 /* JPTableViewCell.h */,
-				180EFD3F1C4CD70A0016F2B8 /* JPTableViewCell.m */,
-				180EFD451C4CD9630016F2B8 /* JPNavgationBarExtension */,
-				180EFD411C4CD7D10016F2B8 /* JPRefreshTitleView */,
+				9FBACBCA1E47110600539F52 /* JKNavigationController */,
+				180EFD0B1C4CD4420016F2B8 /* HomeViewController.h */,
+				180EFD0C1C4CD4420016F2B8 /* HomeViewController.m */,
+				9FE1A3881E4C1376008A6DA5 /* ZhiHuViewController.h */,
+				9FE1A3891E4C1376008A6DA5 /* ZhiHuViewController.m */,
+				9F8BE1A91E4C7032008D66AC /* JKViewController.h */,
+				9F8BE1AA1E4C7032008D66AC /* JKViewController.m */,
+				9FCD5EAB1E4734C20016FDD5 /* TabBarController.h */,
+				9FCD5EAC1E4734C20016FDD5 /* TabBarController.m */,
 				180EFD0E1C4CD4420016F2B8 /* Main.storyboard */,
-				180EFD141C4CD4420016F2B8 /* Assets.xcassets */,
-				180EFD161C4CD4420016F2B8 /* LaunchScreen.storyboard */,
-				180EFD191C4CD4420016F2B8 /* Info.plist */,
-				180EFD111C4CD4420016F2B8 /* TransparentNavgationBar.xcdatamodeld */,
+				9FE1A38B1E4C1384008A6DA5 /* Others */,
 				180EFD051C4CD4420016F2B8 /* Supporting Files */,
 			);
 			path = TransparentNavgationBar;
@@ -166,22 +175,38 @@
 			path = TransparentNavgationBarUITests;
 			sourceTree = "<group>";
 		};
-		180EFD411C4CD7D10016F2B8 /* JPRefreshTitleView */ = {
+		9FBACBCA1E47110600539F52 /* JKNavigationController */ = {
 			isa = PBXGroup;
 			children = (
-				180EFD421C4CD7D10016F2B8 /* JPRefreshTitleView.h */,
-				180EFD431C4CD7D10016F2B8 /* JPRefreshTitleView.m */,
+				9FBACBD71E47124A00539F52 /* jk_icon_system_backIndicator.png */,
+				9FBACBCB1E47116600539F52 /* JKPackageNavigationController.h */,
+				9FBACBCC1E47116600539F52 /* JKPackageNavigationController.m */,
+				9FBACBD11E4711D300539F52 /* JKBackIndicatorButton.h */,
+				9FBACBD21E4711D300539F52 /* JKBackIndicatorButton.m */,
+				9FBACBD41E47124400539F52 /* UIViewController+JKNavigationController.h */,
+				9FBACBD51E47124400539F52 /* UIViewController+JKNavigationController.m */,
+				9FBACBCE1E47118000539F52 /* UINavigationBar+JKTransparentize.h */,
+				9FBACBCF1E47118000539F52 /* UINavigationBar+JKTransparentize.m */,
+				9F6EFD111E47173F00FFEA03 /* JKNavigationController.h */,
 			);
-			path = JPRefreshTitleView;
+			path = JKNavigationController;
 			sourceTree = "<group>";
 		};
-		180EFD451C4CD9630016F2B8 /* JPNavgationBarExtension */ = {
+		9FE1A38B1E4C1384008A6DA5 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				180EFD461C4CD98A0016F2B8 /* UINavigationBar+JPExtension.h */,
-				180EFD471C4CD98A0016F2B8 /* UINavigationBar+JPExtension.m */,
+				180EFD081C4CD4420016F2B8 /* AppDelegate.h */,
+				180EFD091C4CD4420016F2B8 /* AppDelegate.m */,
+				180EFD3E1C4CD70A0016F2B8 /* JPTableViewCell.h */,
+				180EFD3F1C4CD70A0016F2B8 /* JPTableViewCell.m */,
+				9FCD5EA81E4734340016FDD5 /* BaseViewController.h */,
+				9FCD5EA91E4734340016FDD5 /* BaseViewController.m */,
+				180EFD141C4CD4420016F2B8 /* Assets.xcassets */,
+				180EFD161C4CD4420016F2B8 /* LaunchScreen.storyboard */,
+				180EFD191C4CD4420016F2B8 /* Info.plist */,
+				180EFD111C4CD4420016F2B8 /* TransparentNavgationBar.xcdatamodeld */,
 			);
-			path = JPNavgationBarExtension;
+			name = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +314,7 @@
 			files = (
 				180EFD181C4CD4420016F2B8 /* LaunchScreen.storyboard in Resources */,
 				180EFD151C4CD4420016F2B8 /* Assets.xcassets in Resources */,
+				9FBACBD81E47124A00539F52 /* jk_icon_system_backIndicator.png in Resources */,
 				180EFD101C4CD4420016F2B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,15 +340,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180EFD0D1C4CD4420016F2B8 /* ViewController.m in Sources */,
+				180EFD0D1C4CD4420016F2B8 /* HomeViewController.m in Sources */,
+				9FCD5EAA1E4734340016FDD5 /* BaseViewController.m in Sources */,
 				180EFD401C4CD70A0016F2B8 /* JPTableViewCell.m in Sources */,
+				9FE1A38A1E4C1376008A6DA5 /* ZhiHuViewController.m in Sources */,
 				180EFD0A1C4CD4420016F2B8 /* AppDelegate.m in Sources */,
+				9FBACBCD1E47116600539F52 /* JKPackageNavigationController.m in Sources */,
+				9FCD5EAD1E4734C20016FDD5 /* TabBarController.m in Sources */,
 				180EFD131C4CD4420016F2B8 /* TransparentNavgationBar.xcdatamodeld in Sources */,
-				180EFD441C4CD7D10016F2B8 /* JPRefreshTitleView.m in Sources */,
-				183A482C1C4DC7EE00B895C8 /* TranslationNavigationBarVC.m in Sources */,
-				180EFD481C4CD98A0016F2B8 /* UINavigationBar+JPExtension.m in Sources */,
+				9FBACBD61E47124400539F52 /* UIViewController+JKNavigationController.m in Sources */,
 				180EFD071C4CD4420016F2B8 /* main.m in Sources */,
-				180EFD3D1C4CD6E30016F2B8 /* ZhiHuViewController.m in Sources */,
+				9FBACBD31E4711D300539F52 /* JKBackIndicatorButton.m in Sources */,
+				9FBACBD01E47118000539F52 /* UINavigationBar+JKTransparentize.m in Sources */,
+				9F8BE1AB1E4C7032008D66AC /* JKViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +492,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TransparentNavgationBar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.XiFengLang.TransparentNavgationBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -473,6 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TransparentNavgationBar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.XiFengLang.TransparentNavgationBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";

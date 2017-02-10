@@ -6,9 +6,9 @@
 //  Copyright © 2016年 XiFengLang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface ViewController : UIViewController
+@interface HomeViewController : BaseViewController 
 
 
 @end
