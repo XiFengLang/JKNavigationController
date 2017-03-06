@@ -65,7 +65,7 @@
     /// self.automaticallyAdjustsScrollViewInsets = NO;
     
     /* 
-        如果下一个控制器在SB中创建，并且设置了TableView的约束，如果要隐藏TabBar，即self.automaticallyAdjustsScrollViewInsets = NO;
+        如果下一个控制器在SB中创建，并且设置了TableView的约束，如果要隐藏TabBar，即hidesBottomBarWhenPushed = YES;
         那么TableView的Bottom约束要以SuperView为参考，并且设置automaticallyAdjustsScrollViewInsets = NO。
         不然会出现闪烁或者留白
      */

@@ -18,9 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = [UIColor lightGrayColor];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
 
     self.tableView.rowHeight = 50;
     [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"UITableViewHeaderFooterView"];
@@ -53,11 +52,13 @@
             header = [[UITableViewHeaderFooterView alloc]initWithReuseIdentifier:@"UITableViewHeaderFooterView"];
         }
         header.contentView.backgroundColor = [UIColor purpleColor];
+        header.backgroundColor = [UIColor purpleColor];
         [header.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
         
         UILabel * label = [[UILabel alloc]init];
         label.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44);
         label.textAlignment = NSTextAlignmentCenter;
+        label.backgroundColor = [UIColor purpleColor];
         label.textColor = [UIColor whiteColor];
         label.text = [NSString stringWithFormat:@"header%ld",section];
         [header.contentView addSubview:label];

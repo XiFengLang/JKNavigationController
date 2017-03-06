@@ -33,6 +33,8 @@
     
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushAction)];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)pushAction {
@@ -40,6 +42,11 @@
                                                    new] animated:YES];
 }
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [UIViewController attemptRotationToDeviceOrientation];
+}
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
