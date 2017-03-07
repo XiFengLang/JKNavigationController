@@ -88,8 +88,6 @@ self.jk_fullScreenPopGestrueEnabled = NO;
 /// 渐变透明通过调用jk_setNavigationBarSubViewsAlpha:(CGFloat)alpha实现
 ```
 
+---
 
-
-
-
-
+需要注意一点，如果在Push动画中隐藏TabBar，可能会出现留白或者闪烁。原因跟AutoLayout的更新时机有关，解决的思路是从TableView的Bottom约束入手：![](https://github.com/XiFengLang/JKNavigationController/blob/master/TableView和TabBar的约束.png)
