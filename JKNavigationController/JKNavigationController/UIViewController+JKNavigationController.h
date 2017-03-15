@@ -4,12 +4,21 @@
 //
 //  Created by 蒋鹏 on 17/2/5.
 //  Copyright © 2017年 XiFengLang. All rights reserved.
-//
+//  https://github.com/XiFengLang/JKNavigationController
 
 #import <UIKit/UIKit.h>
 #import "JKRootNavigationController.h"
 
-@interface UIViewController (JKNavigationController)
+
+@protocol JKNavigationControllerDelegate <NSObject>
+@optional
+- (BOOL)jk_navigationController:(JKRootNavigationController *)navigationController shouldPopItem:(UINavigationItem *)item;
+
+@end
+
+
+
+@interface UIViewController (JKNavigationController) <JKNavigationControllerDelegate>
 
 
 /**

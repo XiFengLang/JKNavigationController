@@ -52,7 +52,6 @@
             header = [[UITableViewHeaderFooterView alloc]initWithReuseIdentifier:@"UITableViewHeaderFooterView"];
         }
         header.contentView.backgroundColor = [UIColor purpleColor];
-        header.backgroundColor = [UIColor purpleColor];
         [header.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
         
         UILabel * label = [[UILabel alloc]init];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F0420781E790961005DD0F9 /* JKAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0420751E790961005DD0F9 /* JKAlertManager.m */; };
 		9F4928DD1E4D5FFB0077B9E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4928DC1E4D5FFB0077B9E4 /* main.m */; };
 		9F4928E01E4D5FFB0077B9E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4928DF1E4D5FFB0077B9E4 /* AppDelegate.m */; };
 		9F4928E61E4D5FFB0077B9E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4928E41E4D5FFB0077B9E4 /* Main.storyboard */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F0420741E790961005DD0F9 /* JKAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKAlertManager.h; sourceTree = "<group>"; };
+		9F0420751E790961005DD0F9 /* JKAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKAlertManager.m; sourceTree = "<group>"; };
 		9F4928D81E4D5FFB0077B9E4 /* JKNavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKNavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4928DC1E4D5FFB0077B9E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9F4928DE1E4D5FFB0077B9E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -72,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F0420731E790961005DD0F9 /* JKAlertManager */ = {
+			isa = PBXGroup;
+			children = (
+				9F0420741E790961005DD0F9 /* JKAlertManager.h */,
+				9F0420751E790961005DD0F9 /* JKAlertManager.m */,
+			);
+			path = JKAlertManager;
+			sourceTree = "<group>";
+		};
 		9F4928CF1E4D5FFB0077B9E4 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +103,7 @@
 		9F4928DA1E4D5FFB0077B9E4 /* JKNavigationController */ = {
 			isa = PBXGroup;
 			children = (
+				9F0420731E790961005DD0F9 /* JKAlertManager */,
 				9F4929021E4D60AD0077B9E4 /* JKNavigationController */,
 				9F4928E41E4D5FFB0077B9E4 /* Main.storyboard */,
 				9F4928F91E4D60A10077B9E4 /* HomeViewController.h */,
@@ -136,10 +149,10 @@
 		9F4929021E4D60AD0077B9E4 /* JKNavigationController */ = {
 			isa = PBXGroup;
 			children = (
+				9F4929061E4D60AD0077B9E4 /* JKNavigationController.h */,
 				9F4929031E4D60AD0077B9E4 /* jk_icon_system_backIndicator.png */,
 				9F4929041E4D60AD0077B9E4 /* JKBackIndicatorButton.h */,
 				9F4929051E4D60AD0077B9E4 /* JKBackIndicatorButton.m */,
-				9F4929061E4D60AD0077B9E4 /* JKNavigationController.h */,
 				9F4929071E4D60AD0077B9E4 /* JKRootNavigationController.h */,
 				9F4929081E4D60AD0077B9E4 /* JKRootNavigationController.m */,
 				9F4929091E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.h */,
@@ -232,6 +245,7 @@
 				9F4928F81E4D60970077B9E4 /* TabBarController.m in Sources */,
 				9F4928F51E4D608B0077B9E4 /* JPTableViewCell.m in Sources */,
 				9F4928FE1E4D60A10077B9E4 /* ZhiHuViewController.m in Sources */,
+				9F0420781E790961005DD0F9 /* JKAlertManager.m in Sources */,
 				9F4928FD1E4D60A10077B9E4 /* HomeViewController.m in Sources */,
 				9F4929011E4D60A60077B9E4 /* BaseViewController.m in Sources */,
 				9F4929101E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.m in Sources */,
