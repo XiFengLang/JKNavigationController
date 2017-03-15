@@ -11,6 +11,11 @@
 
 
 @protocol JKNavigationControllerDelegate <NSObject>
+
+/**
+ 实现JKNavigationControllerDelegate协议即视为拦截返回按钮的点击事件
+ 如果有拦截，会关闭响应控制器的全屏侧滑返回手势以及自带的侧滑返回手势
+ */
 @optional
 - (BOOL)jk_navigationController:(JKRootNavigationController *)navigationController shouldPopItem:(UINavigationItem *)item;
 

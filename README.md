@@ -96,4 +96,16 @@ self.jk_fullScreenPopGestrueEnabled = NO;
 
 ---
 
+如果需要拦截返回按钮的点击事件，在控制器中实现JKNavigationControllerDelegate协议即可
+```Object-C
+
+- (BOOL)jk_navigationController:(JKRootNavigationController *)navigationController
+                  shouldPopItem:(UINavigationItem *)item {
+    do something...
+}
+                  
+```
+
+---
+
 需要注意一点，如果在Push动画中隐藏TabBar，可能会出现留白或者闪烁。原因跟AutoLayout的更新时机有关，解决的思路是从TableView的Bottom约束入手：![](https://github.com/XiFengLang/JKNavigationController/blob/master/TableView和TabBar的约束.png)
