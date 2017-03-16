@@ -44,7 +44,6 @@ UIImage * JK_GraphicsImageContext(CGSize size,void(^block)()){
 
     
     [backIndicator jk_resetBackIndicatorWithTintColor:tintColor title:title];
-    backIndicator.transform = CGAffineTransformMakeTranslation(-4, 0);
     [backIndicator addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return backIndicator;
 }
@@ -71,7 +70,7 @@ UIImage * JK_GraphicsImageContext(CGSize size,void(^block)()){
     _jk_title = title;
     CGSize newSize = [title boundingRectWithSize:CGSizeMake(120, 30) options:NSStringDrawingUsesLineFragmentOrigin  attributes:@{NSFontAttributeName:self.font} context:nil].size;
     self.titleSize = CGSizeMake(ceil(newSize.width), ceil(newSize.height));
-    self.frame = CGRectMake(12, 6, 19 + self.titleSize.width, 30);
+    self.frame = CGRectMake(16, 7, 19 + self.titleSize.width, 30);
 }
 
 
