@@ -3,7 +3,7 @@
 //  JPRefresh
 //
 //  Created by apple on 16/1/7.
-//  Copyright © 2016年 XiFengLang. All rights reserved.
+//  Copyright © 2016年 溪枫狼. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

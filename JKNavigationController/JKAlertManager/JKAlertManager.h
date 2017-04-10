@@ -4,7 +4,7 @@
 //
 //  Created by 蒋鹏 on 16/8/10.
 //  Copyright © 2016年 蒋鹏. All rights reserved.
-//  https://github.com/XiFengLang/JKAlertManager
+//  https://github.com/溪枫狼/JKAlertManager
 
 
 

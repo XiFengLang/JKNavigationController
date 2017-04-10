@@ -4,7 +4,7 @@
 
 
 
-**`UINavigationBar+JKTransparentize.m`中多处使用KVC调用私有API，未经上架测试，如果不需要渐变功能，可删除部分代码。**
+**`UINavigationBar+JKTransparentize.m`中通过KVC调用私有API，但是已通过上架审核，目前已有2个上线项目使用JKNavigationController。**
 
 
 
