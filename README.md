@@ -107,4 +107,4 @@ self.jk_fullScreenPopGestrueEnabled = NO;
 
 需要注意一点，如果在Push动画中隐藏TabBar，可能会出现留白或者闪烁。原因跟AutoLayout的更新时机有关，解决的思路是从TableView的Bottom约束入手：
 
-<img src="http://wx4.sinaimg.cn/mw690/c56eaed1gy1fet9vymyw9j212e0uijyo.jpg" width="200" height="180">
+<img src="http://wx4.sinaimg.cn/mw690/c56eaed1gy1fet9vymyw9j212e0uijyo.jpg" width="800" height="680">
