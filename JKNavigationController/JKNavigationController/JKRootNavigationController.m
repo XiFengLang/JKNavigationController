@@ -13,11 +13,11 @@
 
 #pragma mark - JKInterLayerViewController外壳(容器)控制器 <声明>
 
-@interface JKInterLayerViewController : UIViewController
+@interface JKInterlayerViewController : UIViewController
 
 @property (nonatomic, weak, readonly) UIViewController * jk_rootViewController;
 
-+ (JKInterLayerViewController *)jk_interlayerViewControllerWithRootViewController:(UIViewController *)rootViewController;
++ (JKInterlayerViewController *)jk_interlayerViewControllerWithRootViewController:(UIViewController *)rootViewController;
 
 
 @end
@@ -50,7 +50,7 @@
     
     
     /// 用容器控制器包装
-    JKInterLayerViewController * interlayerViewController = [JKInterLayerViewController jk_interlayerViewControllerWithRootViewController:viewController];
+    JKInterlayerViewController * interlayerViewController = [JKInterlayerViewController jk_interlayerViewControllerWithRootViewController:viewController];
     
     /// 全局设置全屏侧滑返回手势
     viewController.jk_fullScreenPopGestrueEnabled = self.jk_coverNavigationController.jk_fullScreenPopGestrueEnabled;
@@ -74,7 +74,7 @@
 
 - (void)jk_handleBackIndicatorTapEvent:(JKBackIndicatorButton *)button {
     BOOL shouldPop = YES;
-    JKInterLayerViewController * layerViewController = (JKInterLayerViewController *)self.parentViewController;
+    JKInterlayerViewController * layerViewController = (JKInterlayerViewController *)self.parentViewController;
 
     if ([layerViewController.jk_rootViewController respondsToSelector:@selector(jk_navigationController:shouldPopItem:)]) {
         shouldPop = [layerViewController.jk_rootViewController jk_navigationController:self.jk_coverNavigationController shouldPopItem:layerViewController.jk_rootViewController.navigationItem];
@@ -113,7 +113,7 @@
 #pragma mark - JKInterLayerViewController外壳(容器)控制器 <实现>
 
 
-@implementation JKInterLayerViewController
+@implementation JKInterlayerViewController
 
 
 
@@ -123,12 +123,12 @@
  @param rootViewController 外层显示的控制器
  @return 容器控制器
  */
-+ (JKInterLayerViewController *)jk_interlayerViewControllerWithRootViewController:(UIViewController *)rootViewController {
++ (JKInterlayerViewController *)jk_interlayerViewControllerWithRootViewController:(UIViewController *)rootViewController {
     JKInterLayerNavigationController * interlayerNavigationController = [[JKInterLayerNavigationController alloc] init];
     interlayerNavigationController.viewControllers = @[rootViewController];
     
     
-    JKInterLayerViewController * interlayerViewController = [[JKInterLayerViewController alloc] init];
+    JKInterlayerViewController * interlayerViewController = [[JKInterlayerViewController alloc] init];
 
     [interlayerViewController.view addSubview:interlayerNavigationController.view];
     [interlayerViewController addChildViewController:interlayerNavigationController];
@@ -204,11 +204,11 @@
     NSMutableArray * tempViewControllers = [NSMutableArray array];
     
     [viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:[JKInterLayerViewController class]]) {
+        if ([obj isKindOfClass:[JKInterlayerViewController class]]) {
             [tempViewControllers addObject:obj];
         } else {
             obj.jk_rootNavigationController = self;
-            JKInterLayerViewController * interlayerViewController = [JKInterLayerViewController jk_interlayerViewControllerWithRootViewController:obj];
+            JKInterlayerViewController * interlayerViewController = [JKInterlayerViewController jk_interlayerViewControllerWithRootViewController:obj];
             [tempViewControllers addObject:interlayerViewController];
         }
     }];
@@ -235,7 +235,7 @@
 - (NSArray<UIViewController *> *)jk_viewControllers {
     NSMutableArray * tempViewControllers = [NSMutableArray array];
     for (NSInteger index = 0; index < self.viewControllers.count; index ++) {
-        JKInterLayerViewController * interlayerViewController = (JKInterLayerViewController *)self.viewControllers[index];
+        JKInterlayerViewController * interlayerViewController = (JKInterlayerViewController *)self.viewControllers[index];
         [tempViewControllers addObject:interlayerViewController.jk_rootViewController];
     }
     return tempViewControllers.copy;
@@ -243,13 +243,18 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    NSLog(@"%@ 收到内存警告⚠️",self);
 }
 
 
 
 #pragma mark - UINavigationControllerDelegate 修改侧滑手势效果
 
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(JKInterLayerViewController *)viewController animated:(BOOL)animated {
+- (void)navigationController:(UINavigationController *)navigationController
+       didShowViewController:(JKInterlayerViewController *)viewController
+                    animated:(BOOL)animated {
+    
+    /// rootVC不响应自定义的（全屏）侧滑手势
     BOOL isRootVC = viewController == navigationController.viewControllers.firstObject;
     
     /// 是否拦截返回按钮的点击事件，实现JKNavigationControllerDelegate协议即视为拦截
@@ -274,11 +279,12 @@
 
 #pragma mark - UIGestureRecognizerDelegate 设置手势的优先级或异步响应
 
+/// 不同的手势能在同一时间被响应
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return YES;
 }
 
-
+/// UIScreenEdgePanGestureRecognizer 优先
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return [gestureRecognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]];
 }

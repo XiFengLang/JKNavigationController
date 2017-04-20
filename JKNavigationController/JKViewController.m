@@ -24,7 +24,6 @@
     self.view.backgroundColor = [UIColor redColor];
     
     /// 关闭全屏侧滑返回手势效果，会使用原生的侧滑效果
-    
     self.jk_fullScreenPopGestrueEnabled = NO;
     
     
@@ -71,10 +70,8 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    /// 修改navigationBar的tintColor需要重绘返回按钮JKBackIndicatorButton的背景图，所以风中起来了。
-    
+    /// 修改navigationBar的tintColor需要重绘返回按钮JKBackIndicatorButton的背景图，所以封装起来了。
     [self.navigationController.navigationBar jk_setTintColor:[UIColor purpleColor]];
-    
     
     
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor purpleColor]}];

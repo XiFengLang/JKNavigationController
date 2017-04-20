@@ -1,10 +1,7 @@
 
+
 ## 2.1版：JKNavigationController ##1
-## 1.0版：JPTransparentNavgationBar（已整合到2.*版） ##
-
-
-
-**`UINavigationBar+JKTransparentize.m`中通过KVC调用私有API，但是已通过上架审核，目前已有2个上线项目使用JKNavigationController。**
+`UINavigationBar+JKTransparentize.m`中通过KVC调用私有API，但是已通过上架审核，目前已有2个上线项目使用JKNavigationController。
 
 
 
@@ -20,7 +17,7 @@
 
 ----
 
-![image](https://github.com/XiFengLang/JPTransparentNavgationBar/raw/master/NavigationBarGif.gif)
+![image](http://wx3.sinaimg.cn/mw690/c56eaed1gy1fet9vxwqtyg20ak0j5twm.gif)
 
 ---
 
@@ -55,7 +52,7 @@ self.navigationController.navigationBar.jk_barBackgroundColor = [UIColor orangeC
 
 设置当前控制器vc.navigationController.navigationBar的背景颜色,通过此方法可以实现当前控制器navigationBar的变色、透明效果：
 
-![image](https://github.com/XiFengLang/JKNavigationController/blob/master/NavigationBarGif_1.gif)
+![image](http://wx4.sinaimg.cn/mw690/c56eaed1gy1fet9vx65x0g20bh0263zu.gif)
 
 ```Object-C
 [self.navigationController.navigationBar jk_setNavigationBarBackgroundColor:[UIColor orangeColor]];
@@ -86,7 +83,7 @@ self.jk_fullScreenPopGestrueEnabled = NO;
 
 如果要实现知乎日报首页的效果，即NavigationBar的渐变偏移效果，则调用下面的代码。
 
-![image](https://github.com/XiFengLang/JKNavigationController/blob/master/NavigationBarGif_2.gif)
+![image](http://wx3.sinaimg.cn/mw690/c56eaed1gy1fet9vxkztug20bh026jsz.gif)
 
 ```Object-C
 [navigationBar jk_setNavigationBarVerticalOffsetY:(CGFloat)offsetY]
@@ -108,4 +105,6 @@ self.jk_fullScreenPopGestrueEnabled = NO;
 
 ---
 
-需要注意一点，如果在Push动画中隐藏TabBar，可能会出现留白或者闪烁。原因跟AutoLayout的更新时机有关，解决的思路是从TableView的Bottom约束入手：![](https://github.com/XiFengLang/JKNavigationController/blob/master/TableView和TabBar的约束.png)
+需要注意一点，如果在Push动画中隐藏TabBar，可能会出现留白或者闪烁。原因跟AutoLayout的更新时机有关，解决的思路是从TableView的Bottom约束入手：
+
+<img src="http://wx4.sinaimg.cn/mw690/c56eaed1gy1fet9vymyw9j212e0uijyo.jpg" width="200" height="180">
