@@ -10,8 +10,9 @@
 #define JKNavigationController_h
 
 
-#import "UINavigationBar+JKTransparentize.h"
 #import "JKRootNavigationController.h"
+
+#import "UINavigationBar+JKTransparentize.h"
 #import "UIViewController+JKNavigationController.h"
 #import "JKBackIndicatorButton.h"
 

@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+/**
+ JKNavigationController通用的自定义按钮
+ */
 @interface JKBackIndicatorButton : UIButton
 
 @property (nonatomic, copy, readonly) NSString * jk_title;
 
 
 /**
- 重新修改TintColor,会调用jk_resetBackIndicatorWithTintColor:(UIColor *)tintColor title:(NSString *)title
+ 重新修改TintColor,内部会调用jk_resetBackIndicatorWithTintColor:(UIColor *)tintColor title:(NSString *)title
 
  @param tintColor tintColor description
  */
@@ -22,7 +27,15 @@
 
 
 
+/**
+ 重新修改TintColor和Title
+
+ @param tintColor tintColor description
+ @param title title description
+ */
 - (void)jk_resetBackIndicatorWithTintColor:(UIColor *)tintColor title:(NSString *)title;
+
+
 
 
 /**

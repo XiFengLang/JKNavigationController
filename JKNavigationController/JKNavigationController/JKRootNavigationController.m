@@ -11,21 +11,53 @@
 #import "UINavigationBar+JKTransparentize.m"
 #import "UIViewController+JKNavigationController.h"
 
+
+
+
+
+#pragma mark - *******************************************************************
 #pragma mark - JKInterLayerViewController外壳(容器)控制器 <声明>
 
+/**
+ 用于包装customViewController的包裹层控制器，形成JKInterLayerViewController  ->   JKInterLayerNavigationController ->  customViewController的结构
+ */
 @interface JKInterlayerViewController : UIViewController
 
+
+/**<  取最外层的customViewController  */
 @property (nonatomic, weak, readonly) UIViewController * jk_rootViewController;
 
+
+/**
+ 构造方法
+
+ @param rootViewController 外层显示的自定义控制器customViewController
+ @return 包装后的控制器
+ */
 + (JKInterlayerViewController *)jk_interlayerViewControllerWithRootViewController:(UIViewController *)rootViewController;
 
 
 @end
 
+
+
+
+
+
+
+#pragma mark - *******************************************************************
 #pragma mark - JKInterLayerNavigationController外壳导航控制器
 
+
+/**
+ 外层customViewController的导航控制器，和customViewController是一一对应的。
+ 可以理解为：每个控制器都定制了一个专属的导航控制器，导航栏navigationBar也是专属的
+ 
+ 重写Push/Pop/Dismiss，转由根导航控制器jk_rootNavigationController调用ush/Pop/Dismiss
+ */
 @interface JKInterLayerNavigationController : UINavigationController
 
+/**<  根导航控制器  */
 @property (nonatomic, weak, readonly) JKRootNavigationController * jk_coverNavigationController;
 
 @end
@@ -36,6 +68,9 @@
     return (JKRootNavigationController *)self.parentViewController.navigationController;
 }
 
+
+/**<  重写，由根导航控制器jk_rootNavigationController操作Push/Pop/Dismiss  */
+
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     viewController.jk_rootNavigationController = self.jk_coverNavigationController;
     UIViewController * fromViewController = self.jk_coverNavigationController.jk_viewControllers.lastObject;
@@ -44,7 +79,7 @@
     NSString * title = fromViewController.navigationItem.title;
     title = fromViewController.navigationItem.title ? : title;
     title = fromViewController.navigationItem.backBarButtonItem.title ? : title;
-    if (nil == title || title.length == 0 || [title isEqualToString:@"Back"]) {
+    if (nil == title || [title isEqualToString:@"Back"]) {
         title = @"返回";
     }
     
@@ -60,7 +95,7 @@
     JKBackIndicatorButton * backIndicator = [JKBackIndicatorButton jk_backIndicatorWithTitle:title tintColor:fromViewController.navigationController.navigationBar.tintColor target:interlayerViewController.childViewControllers.firstObject action:@selector(jk_handleBackIndicatorTapEvent:)];
     viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backIndicator];
     
-    
+    /// 由jk_rootNavigationController管理interlayerViewController的入栈出栈
     [self.jk_coverNavigationController pushViewController:interlayerViewController animated:YES];
     
     /// 实现全局效果
@@ -72,10 +107,18 @@
 }
 
 
+
+
+/**
+ 响应自定义返回按钮的点击事件
+
+ @param button JKBackIndicatorButton
+ */
 - (void)jk_handleBackIndicatorTapEvent:(JKBackIndicatorButton *)button {
     BOOL shouldPop = YES;
     JKInterlayerViewController * layerViewController = (JKInterlayerViewController *)self.parentViewController;
-
+    
+    /// 判断customViewController是否有拦截，如果有拦截（实现了JKNavigationControllerDelegate中的方法），则调用customViewController中实现的（jk_navigationController: shouldPopItem:）方法。
     if ([layerViewController.jk_rootViewController respondsToSelector:@selector(jk_navigationController:shouldPopItem:)]) {
         shouldPop = [layerViewController.jk_rootViewController jk_navigationController:self.jk_coverNavigationController shouldPopItem:layerViewController.jk_rootViewController.navigationItem];
     }
@@ -86,8 +129,7 @@
 }
 
 
-#pragma mark - Push/Pop全都由JKRootNavigationController管理
-
+#pragma mark - Push/Pop/Dismiss全都由JKRootNavigationController管理、操作
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated {
     return [self.jk_coverNavigationController popViewControllerAnimated:animated];
@@ -102,7 +144,6 @@
     return [self.jk_coverNavigationController popToRootViewControllerAnimated:animated];
 }
 
-
 - (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
     [self.jk_coverNavigationController dismissViewControllerAnimated:flag completion:completion];
 }
@@ -110,6 +151,13 @@
 @end
 
 
+
+
+
+
+
+
+#pragma mark - *******************************************************************
 #pragma mark - JKInterLayerViewController外壳(容器)控制器 <实现>
 
 
@@ -118,27 +166,38 @@
 
 
 /**
- 包装容器控制器，JKInterLayerViewController  ->   JKInterLayerNavigationController ->  UIViewController
+ 包装容器控制器，JKInterLayerViewController  ->   JKInterLayerNavigationController ->  customViewController
 
- @param rootViewController 外层显示的控制器
+ @param rootViewController 外层显示的自定义控制器customViewController
  @return 容器控制器
  */
 + (JKInterlayerViewController *)jk_interlayerViewControllerWithRootViewController:(UIViewController *)rootViewController {
+    
+    /// 初始化用来包装的导航控制器，包装（管理）customViewController
     JKInterLayerNavigationController * interlayerNavigationController = [[JKInterLayerNavigationController alloc] init];
     interlayerNavigationController.viewControllers = @[rootViewController];
     
     
+    /// 再实例一个interlayerViewController管理导航控制器interlayerNavigationController
     JKInterlayerViewController * interlayerViewController = [[JKInterlayerViewController alloc] init];
-
+    
     [interlayerViewController.view addSubview:interlayerNavigationController.view];
     [interlayerViewController addChildViewController:interlayerNavigationController];
     return interlayerViewController;
 }
 
+
+
+/**
+ 返回外层显示的自定义控制器customViewController
+
+ @return customViewController
+ */
 - (UIViewController *)jk_rootViewController {
     JKInterLayerNavigationController * interlayerNavigationController = self.childViewControllers.firstObject;
     return interlayerNavigationController.viewControllers.firstObject;
 }
+
 
 - (UIViewController *)childViewControllerForStatusBarStyle {
     return self.jk_rootViewController;
@@ -171,11 +230,20 @@
 @end
 
 
+
+
+
+
+#pragma mark - *******************************************************************
 #pragma mark - JKRootNavigationController最底层的总导航控制器
 
 
 @interface JKRootNavigationController () <UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 
+
+/**
+ 全屏侧滑手势
+ */
 @property (nonatomic, strong) UIPanGestureRecognizer * jk_popGestuer;
 @property (nonatomic, weak) id jk_popGestureDelegate;
 
@@ -200,6 +268,11 @@
     }return self;
 }
 
+
+/**<  
+ 通用接口，对customViewController进行统一包装，以应对外部调用[nav setViewControllers:]和[nav setViewControllers: animated:]。
+ 
+ */
 - (void)setViewControllers:(NSArray<__kindof UIViewController *> *)viewControllers {
     NSMutableArray * tempViewControllers = [NSMutableArray array];
     
@@ -208,6 +281,8 @@
             [tempViewControllers addObject:obj];
         } else {
             obj.jk_rootNavigationController = self;
+            
+            /// 包装
             JKInterlayerViewController * interlayerViewController = [JKInterlayerViewController jk_interlayerViewControllerWithRootViewController:obj];
             [tempViewControllers addObject:interlayerViewController];
         }
@@ -221,7 +296,7 @@
     self.delegate = self;
     
     
-    /// 用KVO取出原生侧滑手势的Target和响应事件
+    /// 用KVC取出系统侧滑手势的Target和响应事件，PS: 已有2个线上项目使用，不会影响App上架。
     NSArray *internalTargets = [self.interactivePopGestureRecognizer valueForKey:@"targets"];
     id internalTarget = [internalTargets.firstObject valueForKey:@"target"];
     self.jk_popGestureDelegate = internalTarget;
@@ -232,6 +307,11 @@
 }
 
 
+/**
+ 遍历取外部显示的自定义控制器customViewController
+
+ @return customViewController
+ */
 - (NSArray<UIViewController *> *)jk_viewControllers {
     NSMutableArray * tempViewControllers = [NSMutableArray array];
     for (NSInteger index = 0; index < self.viewControllers.count; index ++) {
