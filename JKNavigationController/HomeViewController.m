@@ -39,6 +39,7 @@
     /// 会设置所有子控制器navigationBar的颜色，并且决定下一个Push的控制器默认的jk_barBackgroundColor，全局效果
     self.navigationController.navigationBar.jk_barBackgroundColor = [UIColor orangeColor];
     
+    
     /// 只会设置当前控制器的navigationBar的颜色
     [self.navigationController.navigationBar jk_setNavigationBarBackgroundColor:[UIColor orangeColor]];
     
@@ -86,6 +87,7 @@
 
     if (newoffsetY >= 0 && newoffsetY <= 150) {
         [self.navigationController.navigationBar jk_setNavigationBarBackgroundColor:[[UIColor orangeColor] colorWithAlphaComponent:1- newoffsetY/150]];
+        
     }else if (newoffsetY > 150){
         [self.navigationController.navigationBar jk_setNavigationBarBackgroundColor:[[UIColor orangeColor] colorWithAlphaComponent:0]];
 

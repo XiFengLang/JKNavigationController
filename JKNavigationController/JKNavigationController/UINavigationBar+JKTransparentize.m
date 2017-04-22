@@ -33,6 +33,7 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
 - (void)jk_setTintColor:(UIColor *)tintColor {
     self.tintColor = tintColor;
     
+    /// JKBackIndicatorButton需要重绘背景图
     NSArray * leftViews = [self valueForKey:@"leftViews"];
     if ([leftViews.firstObject isKindOfClass:[JKBackIndicatorButton class]]) {
         [((JKBackIndicatorButton *) leftViews.firstObject) jk_resetBackIndicatorWithTintColor:tintColor];
@@ -59,6 +60,7 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
         if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0) {
             contentView = [self valueForKey:@"contentView"];
         }
+        /// 创建一个高度为64的jk_backgroundView放在navigationBar上
         [contentView insertSubview:self.jk_backgroundView atIndex:0];
     }
     self.jk_backgroundView.backgroundColor = backgroundColor;
@@ -75,6 +77,7 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
     
     UIView * backIndicatorView = [self valueForKey:@"backIndicatorView"];
     
+    /// navigationController.viewControllers.count == 1时，返回箭头图标是隐藏的
     UINavigationController * navigationController = [self valueForKey:@"delegate"];
     if (navigationController.viewControllers.count == 1) {
         backIndicatorView.alpha = 0;
@@ -85,11 +88,13 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
     UIView * titleView = [self valueForKey:@"titleView"];
     titleView.alpha = alpha;
     
+    /// 分系统版本
     UINavigationBar * contentView = self;
     if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0) {
         contentView = [self valueForKey:@"contentView"];
     }
     
+    /// 自定义titleView的时候，用KVC取出来可能是nil，可以遍历子视图取出来
     [contentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:NSClassFromString(@"UINavigationItemView")]) {
             if (titleView == nil) {
@@ -130,12 +135,14 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
 
 
 /**    
+ 用Runtime取了UINavigationBar的所有成员变量
+ 
  "_itemStack",
  "_delegate",
  "_rightMargin",
  "_state",
  "_barBackgroundView",     iOS10
- _backgroundView           iOS8.9
+ _backgroundView           iOS8/9
  
  "_customBackgroundView",
  "_titleView",
