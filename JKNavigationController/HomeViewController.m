@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    NSLog(@"%@  %@",NSStringFromSelector(_cmd),self);
     
     self.navigationItem.title = @"首页";
     HeaderFrame = [self.tableView rectForHeaderInSection:1];

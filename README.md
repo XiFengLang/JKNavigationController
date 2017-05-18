@@ -1,5 +1,5 @@
 
-![version](https://img.shields.io/badge/Version-2.1.1-blue.svg) ![platform](https://img.shields.io/badge/platform-iOS-ligtgrey.svg)  ![ios](https://img.shields.io/badge/Requirements-iOS8%2B-green.svg)
+![version](https://img.shields.io/badge/Version-2.1.2-blue.svg) ![platform](https://img.shields.io/badge/platform-iOS-ligtgrey.svg)  ![ios](https://img.shields.io/badge/Requirements-iOS8%2B-green.svg)
 
 JKNavigationController
 ===
@@ -31,6 +31,7 @@ JKNavigationController
 ![image](http://wx3.sinaimg.cn/mw690/c56eaed1gy1fet9vxwqtyg20ak0j5twm.gif)
 
 ## <a id="Updation"></a>JKNavigationController迭代记录
+* 2.1.2：解决tabBarController.viewControllers全部提前走viewDidLoad的BUG(1.0.1)，修改后界面显示才会走viewDidLoad
 * 2.1.1：解决设置self.navigationItem.backBarButtonItem无效的BUG
 * 2.1：增加返回按钮点击事件的拦截机制
 * 2.0：兼容了iOS8、iOS9、iOS10，增加了对Push和Pop动画的兼容，并增加全屏侧滑返回手势

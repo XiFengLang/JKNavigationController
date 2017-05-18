@@ -9,11 +9,18 @@
 #ifndef JKNavigationController_h
 #define JKNavigationController_h
 
+/**    
+    当前版本：v2.1.2
+ */
+
+
 
 #import "JKRootNavigationController.h"
 
 #import "UINavigationBar+JKTransparentize.h"
+
 #import "UIViewController+JKNavigationController.h"
+
 #import "JKBackIndicatorButton.h"
 
 

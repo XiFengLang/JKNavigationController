@@ -181,11 +181,23 @@
     /// 再实例一个interlayerViewController管理导航控制器interlayerNavigationController
     JKInterlayerViewController * interlayerViewController = [[JKInterlayerViewController alloc] init];
     
-    [interlayerViewController.view addSubview:interlayerNavigationController.view];
+    
+    /// BUG 1.0.1: 会提前触发viewDidLoad，但是控制器所在的界面并没有显示。特别是tabBarController.viewControllers，全部会提前走viewDidLoad，影响体验。
+    /// 已将此处代码移至下面的viewWillAppear中，这样就能做到界面显示才走viewDidLoad
+    //    [interlayerViewController.view addSubview:interlayerNavigationController.view];
+    
     [interlayerViewController addChildViewController:interlayerNavigationController];
     return interlayerViewController;
 }
 
+
+/// 针对BUG 1.0.1做的优化
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (self.childViewControllers.count && self.view.subviews.count == 0) {
+        [self.view addSubview:self.childViewControllers.firstObject.view];
+    }
+}
 
 
 /**
