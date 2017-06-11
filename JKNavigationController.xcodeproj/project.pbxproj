@@ -25,6 +25,7 @@
 		9F4929111E4D60AD0077B9E4 /* UIViewController+JKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F49290C1E4D60AD0077B9E4 /* UIViewController+JKNavigationController.m */; };
 		9F4929141E4D60CB0077B9E4 /* JKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4929131E4D60CB0077B9E4 /* JKViewController.m */; };
 		9F49291A1E4D98F80077B9E4 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4929191E4D98F80077B9E4 /* TestViewController.m */; };
+		9FC9E6451EED89B300C2C04E /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9E6441EED89B300C2C04E /* NSObject+Runtime.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,8 @@
 		9F4929131E4D60CB0077B9E4 /* JKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKViewController.m; sourceTree = "<group>"; };
 		9F4929181E4D98F80077B9E4 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		9F4929191E4D98F80077B9E4 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		9FC9E6431EED89B300C2C04E /* NSObject+Runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
+		9FC9E6441EED89B300C2C04E /* NSObject+Runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,8 @@
 				9F4928F41E4D608B0077B9E4 /* JPTableViewCell.m */,
 				9F4928E91E4D5FFB0077B9E4 /* LaunchScreen.storyboard */,
 				9F4928EC1E4D5FFB0077B9E4 /* Info.plist */,
+				9FC9E6431EED89B300C2C04E /* NSObject+Runtime.h */,
+				9FC9E6441EED89B300C2C04E /* NSObject+Runtime.m */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 				9F4928FE1E4D60A10077B9E4 /* ZhiHuViewController.m in Sources */,
 				9F0420781E790961005DD0F9 /* JKAlertManager.m in Sources */,
 				9F4928FD1E4D60A10077B9E4 /* HomeViewController.m in Sources */,
+				9FC9E6451EED89B300C2C04E /* NSObject+Runtime.m in Sources */,
 				9F4929011E4D60A60077B9E4 /* BaseViewController.m in Sources */,
 				9F4929101E4D60AD0077B9E4 /* UINavigationBar+JKTransparentize.m in Sources */,
 				9F4928DD1E4D5FFB0077B9E4 /* main.m in Sources */,

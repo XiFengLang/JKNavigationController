@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 #import "JKNavigationController.h"
 #import "ZhiHuViewController.h"
-
+#import "NSObject+Runtime.h"
 
 @interface HomeViewController ()
 {
@@ -24,7 +24,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@  %@",NSStringFromSelector(_cmd),self);
+    
+//    NSLog(@"%@",[UINavigationBar jk_properties]);
+    
+    
+    
+    [[UINavigationBar jk_properties] enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"%@ : %@\n.",obj, [self.navigationController.navigationBar valueForKey:obj]);
+    }];
     
     self.navigationItem.title = @"首页";
     HeaderFrame = [self.tableView rectForHeaderInSection:1];
