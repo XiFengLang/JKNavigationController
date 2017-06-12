@@ -24,23 +24,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    NSLog(@"%@",[UINavigationBar jk_properties]);
-    
-    
-    
-    [[UINavigationBar jk_properties] enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSLog(@"%@ : %@\n.",obj, [self.navigationController.navigationBar valueForKey:obj]);
-    }];
-    
     self.navigationItem.title = @"首页";
     HeaderFrame = [self.tableView rectForHeaderInSection:1];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushAction)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushAction)];
+    self.navigationItem.leftBarButtonItems = @[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushAction)],[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushAction)]];
+    self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushAction)],[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushAction)]];
     
     /// 全局效果
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    
+//    [[UINavigationBar jk_properties] enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        NSLog(@"%@ : %@\n.",obj, [self.navigationController.navigationBar valueForKey:obj]);
+//    }];
+//
     
     
     /// 会设置所有子控制器navigationBar的颜色，并且决定下一个Push的控制器默认的jk_barBackgroundColor，全局效果
@@ -62,6 +61,12 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     HeaderFrame = [self.tableView rectForHeaderInSection:1];
+    
+    
+    [self.navigationController.navigationBar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"%@",obj.subviews);
+        NSLog(@"\n.");
+    }];
 }
 
 

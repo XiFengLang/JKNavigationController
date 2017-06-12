@@ -13,5 +13,101 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JKNavigationController/JKNavigationController/UINavigationBar+JKTransparentize.m"
+            timestampString = "518973526.731015"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "-jk_setNavigationBarSubViewsAlpha:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[UINavigationBar(JKTransparentize) jk_setNavigationBarSubViewsAlpha:]"
+                  moduleName = "JKNavigationController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangpeng/Desktop/MyGithub/JKNavigationController/JKNavigationController/JKNavigationController/UINavigationBar+JKTransparentize.m"
+                  timestampString = "518973526.768843"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "791">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[UINavigationBar(JKTransparentize) jk_setNavigationBarSubViewsAlpha:]"
+                  moduleName = "JKNavigationController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangpeng/Desktop/MyGithub/JKNavigationController/JKNavigationController/JKNavigationController/UINavigationBar+JKTransparentize.m"
+                  timestampString = "518973526.772033"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "791">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JKNavigationController/JKNavigationController/UINavigationBar+JKTransparentize.m"
+            timestampString = "518973526.731358"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "-jk_setNavigationBarSubViewsAlpha:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[UINavigationBar(JKTransparentize) jk_setNavigationBarSubViewsAlpha:]"
+                  moduleName = "JKNavigationController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangpeng/Desktop/MyGithub/JKNavigationController/JKNavigationController/JKNavigationController/UINavigationBar+JKTransparentize.m"
+                  timestampString = "518973526.777652"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "518">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[UINavigationBar(JKTransparentize) jk_setNavigationBarSubViewsAlpha:]"
+                  moduleName = "JKNavigationController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangpeng/Desktop/MyGithub/JKNavigationController/JKNavigationController/JKNavigationController/UINavigationBar+JKTransparentize.m"
+                  timestampString = "518973526.780609"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "518">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

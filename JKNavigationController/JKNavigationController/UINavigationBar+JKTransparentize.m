@@ -30,14 +30,68 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
 }
 
 
+/// 为iOS11写的方法，等同取高度为64的_backgroundView(iOS8/9) 或者 _barBackgroundView(iOS10)
+- (UIView *)jk_systemBarContentView {
+    __block UIView * barContentView = nil;
+    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:NSClassFromString(@"_UINavigationBarContentView")]) {
+            barContentView = obj;
+            *stop = YES;
+        }
+    }];
+    return barContentView;
+}
+
+
+- (NSArray <UIView *>*)jk_leftViews {
+    if ([UIDevice currentDevice].systemVersion.floatValue < 11.0) {
+        return [self valueForKey:@"leftViews"];
+    } else {
+        UIView * barContentView = [self jk_systemBarContentView];
+        __block UIView * leftStackView = nil;
+        CGFloat navigationBarWidth = self.frame.size.width;
+        [barContentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj isKindOfClass:NSClassFromString(@"_UIButtonBarStackView")]) {
+                if (obj.frame.origin.x < navigationBarWidth * 0.5) {
+                    leftStackView = obj;
+                    *stop = YES;
+                }
+            }
+        }];
+        return leftStackView.subviews;
+    }
+}
+
+- (NSArray <UIView *>*)jk_rightViews {
+    if ([UIDevice currentDevice].systemVersion.floatValue < 11.0) {
+        return [self valueForKey:@"rightViews"];
+    } else {
+        UIView * barContentView = [self jk_systemBarContentView];
+        __block UIView * leftStackView = nil;
+        CGFloat navigationBarWidth = self.frame.size.width;
+        [barContentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj isKindOfClass:NSClassFromString(@"_UIButtonBarStackView")]) {
+                if (obj.frame.origin.x > navigationBarWidth * 0.5) {
+                    leftStackView = obj;
+                    *stop = YES;
+                }
+            }
+        }];
+        return leftStackView.subviews;
+    }
+}
+
+
 - (void)jk_setTintColor:(UIColor *)tintColor {
     self.tintColor = tintColor;
     
     /// JKBackIndicatorButton需要重绘背景图
-    NSArray * leftViews = [self valueForKey:@"leftViews"];
-    if ([leftViews.firstObject isKindOfClass:[JKBackIndicatorButton class]]) {
-        [((JKBackIndicatorButton *) leftViews.firstObject) jk_resetBackIndicatorWithTintColor:tintColor];
-    }
+    [[self jk_leftViews] enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[JKBackIndicatorButton class]]) {
+            [(JKBackIndicatorButton *)obj jk_resetBackIndicatorWithTintColor:tintColor];
+            *stop = YES;
+        }
+    }];
 }
 
 - (void)setJk_backgroundView:(UIView *)jk_backgroundView {
@@ -48,6 +102,14 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
     return objc_getAssociatedObject(self, kBarBackgroundViewKey);
 }
 
+- (UINavigationBar *)jk_navigationBar {
+    UINavigationBar * contentView = self;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0 && [UIDevice currentDevice].systemVersion.floatValue < 11.0) {
+        contentView = [self valueForKey:@"contentView"];
+    }
+    return contentView;
+}
+
 - (void)jk_setNavigationBarBackgroundColor:(UIColor *)backgroundColor {
     if (nil == self.jk_backgroundView) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
@@ -56,33 +118,32 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
         self.jk_backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, self.frame.size.width, 64)];
         self.jk_backgroundView.userInteractionEnabled = NO;
         
-        UINavigationBar * contentView = self;
-        if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0) {
-            contentView = [self valueForKey:@"contentView"];
-        }
         /// 创建一个高度为64的jk_backgroundView放在navigationBar上
-        [contentView insertSubview:self.jk_backgroundView atIndex:0];
+        [[self jk_navigationBar] insertSubview:self.jk_backgroundView atIndex:0];
     }
+    [[self jk_navigationBar] sendSubviewToBack:self.jk_backgroundView];
     self.jk_backgroundView.backgroundColor = backgroundColor;
 }
 
 - (void)jk_setNavigationBarSubViewsAlpha:(CGFloat)alpha {
-    [[self valueForKey:@"leftViews"] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
+    [[self jk_leftViews] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
         view.alpha = alpha;
     }];
     
-    [[self valueForKey:@"rightViews"] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
+    [[self jk_rightViews] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
         view.alpha = alpha;
     }];
     
-    UIView * backIndicatorView = [self valueForKey:@"backIndicatorView"];
-    
-    /// navigationController.viewControllers.count == 1时，返回箭头图标是隐藏的
-    UINavigationController * navigationController = [self valueForKey:@"delegate"];
-    if (navigationController.viewControllers.count == 1) {
-        backIndicatorView.alpha = 0;
-    } else {
-        backIndicatorView.alpha = alpha;
+    if ([UIDevice currentDevice].systemVersion.floatValue < 11.0) {
+        UIView * backIndicatorView = [self valueForKey:@"backIndicatorView"];
+        
+        /// navigationController.viewControllers.count == 1时，返回箭头图标是隐藏的
+        UINavigationController * navigationController = [self valueForKey:@"delegate"];
+        if (navigationController.viewControllers.count == 1) {
+            backIndicatorView.alpha = 0;
+        } else {
+            backIndicatorView.alpha = alpha;
+        }
     }
     
     UIView * titleView = [self valueForKey:@"titleView"];
@@ -90,23 +151,26 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
     
     /// 分系统版本
     UINavigationBar * contentView = self;
-    if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0) {
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0 && [UIDevice currentDevice].systemVersion.floatValue < 11.0) {
         contentView = [self valueForKey:@"contentView"];
     }
     
-    /// 自定义titleView的时候，用KVC取出来可能是nil，可以遍历子视图取出来
-    [contentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:NSClassFromString(@"UINavigationItemView")]) {
-            if (titleView == nil) {
-                obj.alpha = alpha;
+    if ([UIDevice currentDevice].systemVersion.floatValue < 11.0) {
+        /// 自定义titleView的时候，用KVC取出来可能是nil，可以遍历子视图取出来
+        [contentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj isKindOfClass:NSClassFromString(@"UINavigationItemView")]) {
+                if (titleView == nil) {
+                    obj.alpha = alpha;
+                }
             }
-        }
-    }];
+        }];
+    }
+    
 }
 
 - (void)jk_setNavigationBarVerticalOffsetY:(CGFloat)offsetY {
     UINavigationBar * contentView = self;
-    if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0) {
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0 && [UIDevice currentDevice].systemVersion.floatValue < 11.0) {
         contentView = [self valueForKey:@"contentView"];
     }
     contentView.transform = CGAffineTransformMakeTranslation(0, offsetY);
@@ -124,7 +188,7 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
     [self setShadowImage:nil];
     
     UINavigationBar * contentView = self;
-    if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0) {
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0 && [UIDevice currentDevice].systemVersion.floatValue < 11.0) {
         contentView = [self valueForKey:@"contentView"];
     }
     contentView.transform = CGAffineTransformMakeTranslation(0, 0);
@@ -134,7 +198,7 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
 }
 
 
-/**    
+/**
  用Runtime取了UINavigationBar的所有成员变量
  
  "_itemStack",
@@ -142,7 +206,7 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
  "_rightMargin",
  "_state",
  "_barBackgroundView",     iOS10
- _backgroundView           iOS8/9
+ _backgroundView           iOS8/9  iOS11  y:-20  height:64
  
  "_customBackgroundView",
  "_titleView",
@@ -150,7 +214,7 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
  "_rightViews",
  "_prompt",
  "_accessoryView",
- "_contentView",        iOS10
+ "_contentView",        iOS10  navigationBar
  "_currentCanvasView",
  "_barTintColor",
  "_userContentGuide",
