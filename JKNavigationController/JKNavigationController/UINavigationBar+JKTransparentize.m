@@ -43,6 +43,33 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
 }
 
 
+- (UIView *)jk_titleView {
+    if ([UIDevice currentDevice].systemVersion.floatValue < 11.0) {
+        __block UIView * titleView = [self valueForKey:@"titleView"];
+        
+        /// 自定义titleView的时候，用KVC取出来可能是nil，可以遍历子视图取出来
+        if (!titleView) {
+            [[self jk_navigationBar].subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([obj isKindOfClass:NSClassFromString(@"UINavigationItemView")]) {
+                    titleView = obj;
+                    *stop = YES;
+                }
+            }];
+        }
+        return titleView;
+    } else {
+        UIView * barContentView = [self jk_systemBarContentView];
+        __block UIView * titleView = nil;
+        [barContentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj isKindOfClass:NSClassFromString(@"_UIButtonBarStackView")]) {
+                titleView = obj;
+                *stop = YES;
+            }
+        }];
+        return titleView;
+    }
+}
+
 - (NSArray <UIView *>*)jk_leftViews {
     if ([UIDevice currentDevice].systemVersion.floatValue < 11.0) {
         return [self valueForKey:@"leftViews"];
@@ -119,9 +146,13 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
         self.jk_backgroundView.userInteractionEnabled = NO;
         
         /// 创建一个高度为64的jk_backgroundView放在navigationBar上
-        [[self jk_navigationBar] insertSubview:self.jk_backgroundView atIndex:0];
+        if ([UIDevice currentDevice].systemVersion.floatValue < 11.0) {
+            [[self jk_navigationBar] insertSubview:self.jk_backgroundView atIndex:0];
+        } else {
+            self.jk_backgroundView.frame = CGRectMake(0, 0, self.frame.size.width, 64);
+            [[self jk_navigationBar].superview insertSubview:self.jk_backgroundView belowSubview:[self jk_navigationBar]];
+        }
     }
-    [[self jk_navigationBar] sendSubviewToBack:self.jk_backgroundView];
     self.jk_backgroundView.backgroundColor = backgroundColor;
 }
 
@@ -133,6 +164,9 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
     [[self jk_rightViews] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
         view.alpha = alpha;
     }];
+    
+    [self jk_titleView].alpha = alpha;
+    NSLog(@"%@",[self jk_titleView]);
     
     if ([UIDevice currentDevice].systemVersion.floatValue < 11.0) {
         UIView * backIndicatorView = [self valueForKey:@"backIndicatorView"];
@@ -146,34 +180,10 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
         }
     }
     
-    UIView * titleView = [self valueForKey:@"titleView"];
-    titleView.alpha = alpha;
-    
-    /// 分系统版本
-    UINavigationBar * contentView = self;
-    if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0 && [UIDevice currentDevice].systemVersion.floatValue < 11.0) {
-        contentView = [self valueForKey:@"contentView"];
-    }
-    
-    if ([UIDevice currentDevice].systemVersion.floatValue < 11.0) {
-        /// 自定义titleView的时候，用KVC取出来可能是nil，可以遍历子视图取出来
-        [contentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([obj isKindOfClass:NSClassFromString(@"UINavigationItemView")]) {
-                if (titleView == nil) {
-                    obj.alpha = alpha;
-                }
-            }
-        }];
-    }
-    
 }
 
 - (void)jk_setNavigationBarVerticalOffsetY:(CGFloat)offsetY {
-    UINavigationBar * contentView = self;
-    if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0 && [UIDevice currentDevice].systemVersion.floatValue < 11.0) {
-        contentView = [self valueForKey:@"contentView"];
-    }
-    contentView.transform = CGAffineTransformMakeTranslation(0, offsetY);
+    [self jk_navigationBar].transform = CGAffineTransformMakeTranslation(0, offsetY);
     
     offsetY = MIN(offsetY, 0);
     offsetY = MAX(-44, offsetY);
@@ -187,10 +197,7 @@ static char * kBarBackgroundViewKey = "JKBarBackgroundView";
     [self setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [self setShadowImage:nil];
     
-    UINavigationBar * contentView = self;
-    if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0 && [UIDevice currentDevice].systemVersion.floatValue < 11.0) {
-        contentView = [self valueForKey:@"contentView"];
-    }
+    UINavigationBar * contentView = [self jk_navigationBar];
     contentView.transform = CGAffineTransformMakeTranslation(0, 0);
     contentView.transform = CGAffineTransformIdentity;
     
