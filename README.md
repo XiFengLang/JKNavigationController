@@ -1,4 +1,6 @@
 
+**iOS11正在适配中，2017.6.14**
+
 ![version](https://img.shields.io/badge/Version-2.1.2-blue.svg) ![platform](https://img.shields.io/badge/platform-iOS-ligtgrey.svg)  ![ios](https://img.shields.io/badge/Requirements-iOS8%2B-green.svg)
 
 JKNavigationController
