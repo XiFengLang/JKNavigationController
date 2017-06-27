@@ -17,14 +17,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UITableView * tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    [self.view addSubview:tableView];
+    self.tableView = tableView;
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.backgroundColor = [UIColor lightGrayColor];
     
-
+    
     self.tableView.rowHeight = 50;
+    [self.tableView registerClass:[JPTableViewCell class] forCellReuseIdentifier:NSStringFromClass([JPTableViewCell class])];
     [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"UITableViewHeaderFooterView"];
     self.tableView.sectionFooterHeight = 0;
     self.tableView.tableFooterView = [UIView new];
+    
+    
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [self.tableView reloadData];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 5;
@@ -75,7 +85,9 @@
 
 
 - (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 @end
+

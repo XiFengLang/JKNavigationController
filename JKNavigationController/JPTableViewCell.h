@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface JPTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *label;
+
+@property (weak, nonatomic) UILabel *label;
 
 
 

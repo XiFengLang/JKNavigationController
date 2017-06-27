@@ -18,15 +18,6 @@
 
 @implementation JKBackIndicatorButton
 
-UIImage * JK_GraphicsImageContext(CGSize size,void(^block)()){
-    @autoreleasepool {
-        UIGraphicsBeginImageContextWithOptions(size, false, [UIScreen mainScreen].scale);
-        block();
-        UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        return image;
-    }
-}
 
 + (JKBackIndicatorButton *)jk_backIndicatorWithTitle:(NSString *)title tintColor:(UIColor *)tintColor target:(id)target action:(SEL)action {
     
@@ -41,7 +32,7 @@ UIImage * JK_GraphicsImageContext(CGSize size,void(^block)()){
         fontName = @".SFUIText-Regular";
     }
     backIndicator.font = [UIFont fontWithName:fontName size:17.0];
-
+    
     
     [backIndicator jk_resetBackIndicatorWithTintColor:tintColor title:title];
     [backIndicator addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
@@ -70,7 +61,9 @@ UIImage * JK_GraphicsImageContext(CGSize size,void(^block)()){
     _jk_title = title;
     CGSize newSize = [title boundingRectWithSize:CGSizeMake(120, 30) options:NSStringDrawingUsesLineFragmentOrigin  attributes:@{NSFontAttributeName:self.font} context:nil].size;
     self.titleSize = CGSizeMake(ceil(newSize.width), ceil(newSize.height));
-    self.frame = CGRectMake(16, 7, 19 + self.titleSize.width, 30);
+    
+    CGFloat xAxis = [UIDevice currentDevice].systemVersion.floatValue < 11.0 ? 16 : 0;
+    self.frame = CGRectMake(xAxis, 7, 19 + self.titleSize.width, 30);
 }
 
 
@@ -81,14 +74,14 @@ UIImage * JK_GraphicsImageContext(CGSize size,void(^block)()){
     UIImage * tintIcon = [self jk_redrawImage:icon size:CGSizeMake(13, 21) withTintColor:tintColor];
     NSAttributedString * attributeStr = [[NSAttributedString alloc] initWithString:title attributes:@{NSFontAttributeName:self.font,NSForegroundColorAttributeName:tintColor}];
     
-    return JK_GraphicsImageContext(self.frame.size, ^{
+    return JKGraphicsImageContextWithOptions(self.frame.size, ^{
         [tintIcon drawInRect:CGRectMake(0, 4.667, 13, 21)];
         [attributeStr drawInRect:CGRectMake(19, (30 - self.titleSize.height) / 2.0, self.titleSize.width, self.titleSize.height)];
     });
 }
 
 - (UIImage *)jk_redrawImage:(UIImage *)image size:(CGSize)size withTintColor:(UIColor *)tintColor {
-    return JK_GraphicsImageContext(size, ^{
+    return JKGraphicsImageContextWithOptions(size, ^{
         [tintColor setFill];
         CGRect bounds = CGRectMake(0, 0, size.width, size.height);
         UIRectFill(bounds);
@@ -97,3 +90,4 @@ UIImage * JK_GraphicsImageContext(CGSize size,void(^block)()){
 }
 
 @end
+

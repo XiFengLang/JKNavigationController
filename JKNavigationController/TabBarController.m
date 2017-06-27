@@ -20,14 +20,18 @@
     [super viewDidLoad];
     
     
-    NSArray * vcs = self.viewControllers;
     
-    HomeViewController * home = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HomeViewController"];
     
+    HomeViewController * home_0 = [[HomeViewController alloc] init];
+    JKRootNavigationController * nav_0 = [[JKRootNavigationController alloc] initWithRootViewController:home_0];
+    nav_0.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemContacts tag:0];
+    
+    
+    HomeViewController * home = [[HomeViewController alloc] init];
     JKRootNavigationController * nav = [[JKRootNavigationController alloc] initWithRootViewController:home];
     nav.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemContacts tag:0];
     
-    self.viewControllers = @[vcs.firstObject,nav];
+    self.viewControllers = @[nav_0,nav];
 }
 
 

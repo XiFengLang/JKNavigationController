@@ -20,13 +20,8 @@
     
     self.view.backgroundColor = [UIColor purpleColor];
     self.jk_fullScreenPopGestrueEnabled = YES;
+    self.navigationController.navigationBar.jk_barBackgroundColor = [UIColor clearColor];
 }
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -36,3 +31,4 @@
 
 
 @end
+

@@ -22,10 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-        self.navigationItem.title = @"知乎日报";
+    self.navigationItem.title = @"知乎日报";
     
     /// 后面的控制器会取用上一控制器的jk_barBackgroundColor，所以会影响下一控制器的jk_barBackgroundColor。
-//    self.navigationController.navigationBar.jk_barBackgroundColor = [UIColor purpleColor];
+    //    self.navigationController.navigationBar.jk_barBackgroundColor = [UIColor purpleColor];
     
     
     /// 不影响下一控制器的jk_barBackgroundColor，所以JKViewController的jk_barBackgroundColor颜色和主页相同
@@ -34,10 +34,14 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushAction)];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 64, 0);
+    } else {
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);
+    }
 }
 
-/**    
+/**
  拦截返回按钮的点击事件实现JKNavigationControllerDelegate协议即视为拦截
  如果有拦截，会关闭全屏侧滑返回手势以及自带的侧滑返回手势
  */
@@ -60,7 +64,7 @@
 
 
 - (void)pushAction {
-    [self.navigationController pushViewController:[JKViewController 
+    [self.navigationController pushViewController:[JKViewController
                                                    new] animated:YES];
 }
 
@@ -75,6 +79,7 @@
     
     HeaderFrame = [self.tableView rectForHeaderInSection:1];
     [self scrollViewDidScroll:self.tableView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,19 +99,28 @@
     CGFloat offsetY = scrollView.contentOffset.y;
     CGFloat newoffsetY = offsetY + self.marginTop;
     
+    
     if (newoffsetY >= 0 && newoffsetY <= 100) {
         
         /// 偏移范围0-44（绝对值），并且自动设置子视图控件的透明度
+        offsetY = - newoffsetY/100.0*44;
         
-        [self.navigationController.navigationBar jk_setNavigationBarVerticalOffsetY:- newoffsetY/100.0*44];
+        
+        //        [self.navigationController.navigationBar jk_setNavigationBarVerticalOffsetY:- newoffsetY/100.0*44];
         
     }else if (newoffsetY < 0){
-        [self.navigationController.navigationBar jk_setNavigationBarVerticalOffsetY:0];
+        offsetY = 0;
+        //        [self.navigationController.navigationBar jk_setNavigationBarVerticalOffsetY:0];
         
-    }else{
-        [self.navigationController.navigationBar jk_setNavigationBarVerticalOffsetY:-44];
+    } else {
+        offsetY = -44;
+        //        [self.navigationController.navigationBar jk_setNavigationBarVerticalOffsetY:-44];
     }
     
+    offsetY = MIN(offsetY, 0);
+    offsetY = MAX(-44, offsetY);
+    [self.navigationController.navigationBar jk_setNavigationBarSubViewsAlpha:(44.0 + offsetY) / 44.0];
+
 }
 
 
@@ -115,3 +129,4 @@
 }
 
 @end
+

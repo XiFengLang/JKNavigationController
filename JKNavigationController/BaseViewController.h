@@ -10,6 +10,6 @@
 
 @interface BaseViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) UITableView * tableView;
 
 @end

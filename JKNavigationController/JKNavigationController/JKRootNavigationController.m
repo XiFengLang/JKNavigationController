@@ -30,7 +30,7 @@
 
 /**
  构造方法
-
+ 
  @param rootViewController 外层显示的自定义控制器customViewController
  @return 包装后的控制器
  */
@@ -74,7 +74,7 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     viewController.jk_rootNavigationController = self.jk_coverNavigationController;
     UIViewController * fromViewController = self.jk_coverNavigationController.jk_viewControllers.lastObject;
-
+    
     /// 取Title
     NSString * title = fromViewController.navigationItem.title;
     title = fromViewController.navigationItem.title ? : title;
@@ -111,7 +111,7 @@
 
 /**
  响应自定义返回按钮的点击事件
-
+ 
  @param button JKBackIndicatorButton
  */
 - (void)jk_handleBackIndicatorTapEvent:(JKBackIndicatorButton *)button {
@@ -167,7 +167,7 @@
 
 /**
  包装容器控制器，JKInterLayerViewController  ->   JKInterLayerNavigationController ->  customViewController
-
+ 
  @param rootViewController 外层显示的自定义控制器customViewController
  @return 容器控制器
  */
@@ -196,13 +196,14 @@
     [super viewWillAppear:animated];
     if (self.childViewControllers.count && self.view.subviews.count == 0) {
         [self.view addSubview:self.childViewControllers.firstObject.view];
+        self.childViewControllers.firstObject.view.frame = [UIScreen mainScreen].bounds;
     }
 }
 
 
 /**
  返回外层显示的自定义控制器customViewController
-
+ 
  @return customViewController
  */
 - (UIViewController *)jk_rootViewController {
@@ -233,6 +234,10 @@
 
 - (BOOL)hidesBottomBarWhenPushed {
     return self.jk_rootViewController.hidesBottomBarWhenPushed;
+}
+
+- (BOOL)automaticallyAdjustsScrollViewInsets {
+    return self.jk_rootViewController.automaticallyAdjustsScrollViewInsets;
 }
 
 - (BOOL)jk_fullScreenPopGestrueEnabled {
@@ -281,7 +286,7 @@
 }
 
 
-/**<  
+/**<
  通用接口，对customViewController进行统一包装，以应对外部调用[nav setViewControllers:]和[nav setViewControllers: animated:]。
  
  */
@@ -321,7 +326,7 @@
 
 /**
  遍历取外部显示的自定义控制器customViewController
-
+ 
  @return customViewController
  */
 - (NSArray<UIViewController *> *)jk_viewControllers {
@@ -383,3 +388,4 @@
 
 
 @end
+
